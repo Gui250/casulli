@@ -484,11 +484,15 @@
 
     .sobre-img-frame {
       position: relative;
-      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      background-color: var(--navy);
       border-radius: 4px;
       padding: 40px;
       text-align: center;
       overflow: hidden;
+      min-height: 500px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
     }
 
     .sobre-img-frame::before {
@@ -2180,72 +2184,6 @@
     </div>
   </div>
 
-  <!-- SOBRE -->
-  <section id="sobre">
-    <div class="sobre-image reveal">
-      <div class="sobre-corner"></div>
-      <div class="sobre-corner sobre-corner-br"></div>
-      <div class="sobre-img-frame">
-        <span class="sobre-butterfly-big">></span>
-        <div class="sobre-name-card">
-          <div class="sobre-name">Lizandra Menezes Soares</div>
-          <div class="sobre-title-text">Neuropsicóloga | CRP 19/003267</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="sobre-content reveal reveal-delay-2">
-      <div class="section-eyebrow">Sobre a Fundadora</div>
-      <h2 class="section-title">Uma das vozes mais<br><em>relevantes</em> da neuropsicologia<br>em Sergipe</h2>
-
-      <div class="credentials">
-        <div class="credential-item">
-          <div class="credential-dot"></div>
-          Psicóloga (CRP 19/003267) graduada pela Faculdade Pio Décimo  mais de 7 anos de experiência clínica
-        </div>
-        <div class="credential-item">
-          <div class="credential-dot"></div>
-          Mestre em Psicologia pela Universidade Federal de Sergipe (UFS)
-        </div>
-        <div class="credential-item">
-          <div class="credential-dot"></div>
-          Especialista em Avaliação Psicológica e Neuropsicologia pelo IPOG
-        </div>
-        <div class="credential-item">
-          <div class="credential-dot"></div>
-          Especialização em Terapia Cognitivo Comportamental (TCC) pela PUC/RS
-        </div>
-        <div class="credential-item">
-          <div class="credential-dot"></div>
-          MBA em Reabilitação Neuropsicológica pelo IPOG
-        </div>
-        <div class="credential-item">
-          <div class="credential-dot"></div>
-          Professora universitária e palestrante nacional  presença confirmada no DigiTalks Summit Brasil
-        </div>
-        <div class="credential-item">
-          <div class="credential-dot"></div>
-          Pós-graduanda em Psicoterapia para Adultos Neurodivergentes
-        </div>
-      </div>
-
-      <p style="font-size:14px;color:var(--text-mid);line-height:1.75;margin-bottom:28px;">
-        Fundadora e idealizadora do Casulli, Lizandra criou um espaço onde <strong>ciência, acolhimento e performance
-          humana se encontram</strong>. Seu objetivo é claro: transformar vidas com método, ética e resultados
-        mensuráveis  formando pacientes mais funcionais e profissionais mais preparados para os desafios da vida
-        moderna.
-      </p>
-
-      <div class="awards">
-        <span class="award-badge">Neurofeedback</span>
-        <span class="award-badge">Reabilitação Cognitiva</span>
-        <span class="award-badge">Avaliação Neuropsicológica</span>
-        <span class="award-badge">TCC</span>
-        <span class="award-badge">Alta Performance</span>
-        <span class="award-badge">Neurodivergência</span>
-      </div>
-    </div>
-  </section>
 
   <!-- SERVIÇOS -->
   <section id="servicos">
@@ -2262,82 +2200,92 @@
     <div class="servicos-grid reveal">
       <div class="servico-card">
         <span class="servico-num">01</span>
-        <span class="servico-icon">>à</span>
-        <div class="servico-title">Neuropsicologia</div>
-        <div class="servico-desc">Avaliação e reabilitação neuropsicológica completa, com protocolos baseados em
-          evidências para crianças, adolescentes e adultos.</div>
-        <div class="servico-tags">
-          <span class="servico-tag">Avaliação</span>
-          <span class="servico-tag">Reabilitação</span>
-          <span class="servico-tag">TDAH</span>
-          <span class="servico-tag">TEA</span>
-        </div>
+        <span class="servico-icon">
+          <img src="./casulli/icones/NEUROPSICOLOGIA_ICONE.png" </span>
+          <div class="servico-title">Neuropsicologia</div>
+          <div class="servico-desc">Avaliação e reabilitação neuropsicológica completa, com protocolos baseados em
+            evidências para crianças, adolescentes e adultos.</div>
+          <div class="servico-tags">
+            <span class="servico-tag">Avaliação</span>
+            <span class="servico-tag">Reabilitação</span>
+            <span class="servico-tag">TDAH</span>
+            <span class="servico-tag">TEA</span>
+          </div>
       </div>
 
       <div class="servico-card">
         <span class="servico-num">02</span>
-        <span class="servico-icon">=¬</span>
-        <div class="servico-title">Psicoterapia</div>
-        <div class="servico-desc">Psicoterapia individual com abordagem TCC e outras técnicas, voltada para ansiedade,
-          depressão, traumas e desenvolvimento pessoal.</div>
-        <div class="servico-tags">
-          <span class="servico-tag">TCC</span>
-          <span class="servico-tag">Ansiedade</span>
-          <span class="servico-tag">Depressão</span>
-          <span class="servico-tag">Trauma</span>
-        </div>
+        <span class="servico-icon">
+          <img src="./casulli/icones/PSICOLOGIA_ICONE.png" </span>
+          <div class="servico-title">Psicoterapia</div>
+          <div class="servico-desc">Psicoterapia individual com abordagem TCC e outras técnicas, voltada para ansiedade,
+            depressão, traumas e desenvolvimento pessoal.</div>
+          <div class="servico-tags">
+            <span class="servico-tag">TCC</span>
+            <span class="servico-tag">Ansiedade</span>
+            <span class="servico-tag">Depressão</span>
+            <span class="servico-tag">Trauma</span>
+          </div>
       </div>
 
       <div class="servico-card">
         <span class="servico-num">03</span>
-        <span class="servico-icon">>W</span>
-        <div class="servico-title">Nutrição Integrada</div>
-        <div class="servico-desc">Acompanhamento nutricional alinhado à saúde mental e cognitiva, potencializando os
-          resultados terapêuticos com alimentação funcional.</div>
-        <div class="servico-tags">
-          <span class="servico-tag">Alimentação</span>
-          <span class="servico-tag">Comportamental</span>
-          <span class="servico-tag">Cognitiva</span>
-        </div>
+        <span class="servico-icon">
+          <img src="./casulli/icones/NUTRIÇÃO_ICONE.png" </span>
+          <div class="servico-title">Nutrição Integrada</div>
+          <div class="servico-desc">Acompanhamento nutricional alinhado à saúde mental e cognitiva, potencializando os
+            resultados terapêuticos com alimentação funcional.</div>
+          <div class="servico-tags">
+            <span class="servico-tag">Alimentação</span>
+            <span class="servico-tag">Comportamental</span>
+            <span class="servico-tag">Cognitiva</span>
+          </div>
       </div>
 
       <div class="servico-card">
         <span class="servico-num">04</span>
-        <span class="servico-icon">¡</span>
-        <div class="servico-title">Alta Performance</div>
-        <div class="servico-desc">Programas estruturados para líderes, executivos e empreendedores que desejam maximizar
-          produtividade, foco e resiliência emocional.</div>
-        <div class="servico-tags">
-          <span class="servico-tag">Produtividade</span>
-          <span class="servico-tag">Foco</span>
-          <span class="servico-tag">Liderança</span>
-        </div>
+        <span class="servico-icon">
+          <img src="./casulli/icones/FISIOTERAPIA_ICONE.png" </span>
+          <div class="servico-title">Fisioterapia</div>
+          <div class="servico-desc">Fisioterapia com abordagem neurofuncional e psicossomática, voltada para dores
+            crônicas, tensões por estresse, reabilitação física e performance corporal.</div>
+          <div class="servico-tags">
+            <span class="servico-tag">Pilates</span>
+            <span class="servico-tag">Fisioterapia Ortopédica</span>
+            <span class="servico-tag">Fisioterapia Psicossomática</span>
+          </div>
       </div>
 
       <div class="servico-card">
         <span class="servico-num">05</span>
         <span class="servico-icon">
-          << /span>
-            <div class="servico-title">Atendimento Online</div>
-            <div class="servico-desc">Todas as especialidades disponíveis de forma remota, para pacientes de Sergipe, do
-              Brasil inteiro e do exterior.</div>
-            <div class="servico-tags">
-              <span class="servico-tag">Videoconsulta</span>
-              <span class="servico-tag">Todo o Brasil</span>
-              <span class="servico-tag">Flexível</span>
-            </div>
+          <img src="./casulli/icones/ONLINE_ICONE.png" />
+        </span>
+        <div class="servico-title">Avaliação</div>
+        <div class="servico-desc">
+          Avaliações psicológicas e neuropsicológicas com rigor pericial, voltadas para diagnósticos clínicos, concursos
+          públicos e aptidão para porte de arma.
+        </div>
+        <div class="servico-tags">
+          <span class="servico-tag">Avaliação Psicológica</span>
+          <span class="servico-tag">Avaliação Neuropsicológica</span>
+          <span class="servico-tag">Avaliação para Porte de Arma</span>
+        </div>
       </div>
 
       <div class="servico-card">
         <span class="servico-num">06</span>
-        <span class="servico-icon">=e</span>
-        <div class="servico-title">Grupos Terapêuticos</div>
-        <div class="servico-desc">Encontros em grupo para temas como ansiedade, autoestima e performance  uma
-          experiência transformadora de pertencimento e suporte mútuo.</div>
+        <span class="servico-icon">
+          <img src="/casulli/icones/ONLINE_ICONE.png" />
+        </span>
+        <div class="servico-title">Atendimento Online</div>
+        <div class="servico-desc">
+          Todas as especialidades disponíveis de forma remota, para pacientes de Sergipe e de todo Brasil e Exterior.
+        </div>
         <div class="servico-tags">
           <span class="servico-tag">Online</span>
-          <span class="servico-tag">Presencial</span>
-          <span class="servico-tag">Comunidade</span>
+          <span class="servico-tag">Videoconsulta</span>
+          <span class="servico-tag">Fléxivel</span>
         </div>
       </div>
     </div>
@@ -2783,6 +2731,73 @@
         <div class="diferencial-title">Acolhimento Genuíno</div>
         <div class="diferencial-desc">Um ambiente seguro, ético e sem julgamentos. Aqui você encontra cuidado,
           clareza e o espaço para o seu recomeço.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="sobre">
+    <div class="sobre-image reveal">
+      <div class="sobre-corner"></div>
+      <div class="sobre-corner sobre-corner-br"></div>
+      <div class="sobre-img-frame"
+        style="background: linear-gradient(to bottom, rgba(13, 31, 53, 0.1) 0%, rgba(13, 31, 53, 0.9) 100%), url('casulli/lizandra/FOTO4145.jpg.jpeg') center top / cover no-repeat;">
+        <div class="sobre-name-card">
+          <div class="sobre-name">Lizandra Menezes Soares</div>
+          <div class="sobre-title-text">Neuropsicóloga | CRP 19/003267</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sobre-content reveal reveal-delay-2">
+      <div class="section-eyebrow">Sobre a Fundadora</div>
+      <h2 class="section-title">Uma das vozes mais<br><em>relevantes</em> da neuropsicologia<br>em Sergipe</h2>
+
+      <div class="credentials">
+        <div class="credential-item">
+          <div class="credential-dot"></div>
+          Psicóloga (CRP 19/003267) graduada pela Faculdade Pio Décimo  mais de 7 anos de experiência clínica
+        </div>
+        <div class="credential-item">
+          <div class="credential-dot"></div>
+          Mestre em Psicologia pela Universidade Federal de Sergipe (UFS)
+        </div>
+        <div class="credential-item">
+          <div class="credential-dot"></div>
+          Especialista em Avaliação Psicológica e Neuropsicologia pelo IPOG
+        </div>
+        <div class="credential-item">
+          <div class="credential-dot"></div>
+          Especialização em Terapia Cognitivo Comportamental (TCC) pela PUC/RS
+        </div>
+        <div class="credential-item">
+          <div class="credential-dot"></div>
+          MBA em Reabilitação Neuropsicológica pelo IPOG
+        </div>
+        <div class="credential-item">
+          <div class="credential-dot"></div>
+          Professora universitária e palestrante nacional  presença confirmada no DigiTalks Summit Brasil
+        </div>
+        <div class="credential-item">
+          <div class="credential-dot"></div>
+          Pós-graduanda em Psicoterapia para Adultos Neurodivergentes
+        </div>
+      </div>
+
+      <p style="font-size:14px;color:var(--text-mid);line-height:1.75;margin-bottom:28px;">
+        Fundadora e idealizadora do Casulli, Lizandra criou um espaço onde <strong>ciência, acolhimento e performance
+          humana se encontram</strong>. Seu objetivo é claro: transformar vidas com método, ética e resultados
+        mensuráveis  formando pacientes mais funcionais e profissionais mais preparados para os desafios da vida
+        moderna.
+      </p>
+
+      <div class="awards">
+        <span class="award-badge">Neurofeedback</span>
+        <span class="award-badge">Reabilitação Cognitiva</span>
+        <span class="award-badge">Avaliação Neuropsicológica</span>
+        <span class="award-badge">TCC</span>
+        <span class="award-badge">Alta Performance</span>
+        <span class="award-badge">Neurodivergência</span>
       </div>
     </div>
   </section>

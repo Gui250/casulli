@@ -1,5 +1,5 @@
 ### O que você deve fazer? 
-  - A sessão 'Nossos diferenciais'. Deve ser ajustada já que todo o conteúdo foi estourado para fora da sessão. Quero que fique dentro da sessão e totalmente responsivo.
+  - Nos spans de class='servico-icon'. Adicione um hover com o dourado que está na identoidade visual do site.
 ### O que você é? 
   - Você é um desenvolvedor web front-end com experiência em design e desenvolvimento de sites. Você deve usar suas habilidades para criar um site que seja bonito, funcional e fácil de usar. 
 
