@@ -1,0 +1,3167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casulli  Clínica Integrada de Alta Performance | Aracaju, Sergipe</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0D1F35;
+      --navy-mid: #1A3A5C;
+      --gold: #C9A84C;
+      --gold-light: #E8C97A;
+      --gold-pale: #F9F3E3;
+      --cream: #FAF8F3;
+      --white: #FFFFFF;
+      --text: #1A1A1A;
+      --text-mid: #4A4A4A;
+      --text-light: #888888;
+      --border: rgba(201, 168, 76, 0.25);
+      --shadow: 0 20px 60px rgba(13, 31, 53, 0.12);
+      --shadow-gold: 0 8px 32px rgba(201, 168, 76, 0.2);
+    }
+
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ===== CUSTOM SCROLLBAR ===== */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--navy);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--gold);
+      border-radius: 3px;
+    }
+
+    /* ===== NAVIGATION ===== */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 0 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+      background: rgba(13, 31, 53, 0.97);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+      transition: all 0.4s ease;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .nav-logo-icon {
+      width: 42px;
+      height: 42px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--navy);
+      box-shadow: var(--shadow-gold);
+    }
+
+    .nav-logo-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: 2px;
+    }
+
+    .nav-logo-sub {
+      font-size: 10px;
+      font-weight: 300;
+      color: var(--gold);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      display: block;
+      margin-top: -4px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255, 255, 255, 0.75);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: color 0.3s;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transition: transform 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .nav-links a:hover::after {
+      transform: scaleX(1);
+    }
+
+    .nav-cta {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--navy) !important;
+      padding: 10px 24px;
+      border-radius: 2px;
+      font-weight: 600 !important;
+      font-size: 12px !important;
+      text-transform: uppercase;
+      letter-spacing: 1.5px !important;
+      transition: all 0.3s !important;
+      box-shadow: var(--shadow-gold);
+    }
+
+    .nav-cta::after {
+      display: none !important;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(201, 168, 76, 0.35) !important;
+    }
+
+    /* ===== HERO ===== */
+    #hero {
+      min-height: 100vh;
+      background: var(--navy);
+      background-image: url('casulli/hero_section/Rectangle 317.png');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      overflow: hidden;
+      padding: 80px 5% 0;
+    }
+
+    /* Overlay escuro sutil para melhorar contraste do texto sem esconder a imagem */
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(13, 31, 53, 0.75) 0%, rgba(13, 31, 53, 0.5) 50%, rgba(13, 31, 53, 0.65) 100%);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-bg-pattern {
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 50%, rgba(201, 168, 76, 0.06) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(201, 168, 76, 0.04) 0%, transparent 40%),
+        radial-gradient(circle at 60% 80%, rgba(26, 58, 92, 0.8) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .hero-grid-lines {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(201, 168, 76, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201, 168, 76, 0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 780px;
+      width: 100%;
+      animation: fadeInUp 1s ease both;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 28px;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(52px, 6vw, 80px);
+      font-weight: 300;
+      line-height: 1.05;
+      color: var(--white);
+      margin-bottom: 8px;
+      letter-spacing: -1px;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-title strong {
+      font-weight: 700;
+      display: block;
+    }
+
+    .hero-subtitle {
+      font-size: 16px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.6);
+      margin: 24px 0 44px;
+      line-height: 1.7;
+      max-width: 500px;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 64px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--navy);
+      padding: 16px 40px;
+      border: none;
+      border-radius: 2px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s;
+      box-shadow: var(--shadow-gold);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 48px rgba(201, 168, 76, 0.4);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      padding: 15px 40px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 2px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 48px;
+      padding-top: 48px;
+      border-top: 1px solid rgba(201, 168, 76, 0.2);
+    }
+
+    .stat-item {}
+
+    .stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 40px;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 11px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.5);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    .hero-image-side {
+      display: none;
+      /* Ocultado para permitir background uniforme */
+    }
+
+    .hero-image-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, var(--navy) 0%, rgba(13, 31, 53, 0.3) 40%, transparent 70%);
+      z-index: 1;
+    }
+
+    .hero-visual {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(160deg, #1A3A5C 0%, #0D1F35 40%, #2A5280 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .hero-butterfly {
+      font-size: 220px;
+      opacity: 0.08;
+      filter: blur(2px);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .hero-decoration {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border: 1px solid rgba(201, 168, 76, 0.15);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: pulse-ring 4s ease-in-out infinite;
+    }
+
+    .hero-decoration::before {
+      content: '';
+      position: absolute;
+      inset: 40px;
+      border: 1px solid rgba(201, 168, 76, 0.1);
+      border-radius: 50%;
+    }
+
+    /* ===== SECTION COMMONS ===== */
+    section {
+      padding: 100px 5%;
+    }
+
+    .section-eyebrow {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-eyebrow::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(36px, 4vw, 56px);
+      font-weight: 300;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      letter-spacing: -0.5px;
+    }
+
+    .section-title em {
+      font-style: italic;
+      color: var(--navy-mid);
+    }
+
+    .section-title.light {
+      color: var(--white);
+    }
+
+    .section-title.light em {
+      color: var(--gold);
+    }
+
+    .section-desc {
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.75;
+      max-width: 560px;
+    }
+
+    .section-desc.light {
+      color: rgba(255, 255, 255, 0.65);
+    }
+
+    /* ===== SOBRE / SOBRE LIZANDRA ===== */
+    #sobre {
+      background: var(--white);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .sobre-content {}
+
+    .sobre-image {
+      position: relative;
+    }
+
+    .sobre-img-frame {
+      position: relative;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      border-radius: 4px;
+      padding: 40px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .sobre-img-frame::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 100px;
+      height: 100px;
+      border: 1px solid rgba(201, 168, 76, 0.2);
+      border-radius: 50%;
+    }
+
+    .sobre-butterfly-big {
+      font-size: 140px;
+      display: block;
+      filter: drop-shadow(0 0 40px rgba(201, 168, 76, 0.3));
+      animation: float 5s ease-in-out infinite;
+    }
+
+    .sobre-name-card {
+      background: rgba(201, 168, 76, 0.1);
+      border: 1px solid rgba(201, 168, 76, 0.3);
+      border-radius: 4px;
+      padding: 20px 24px;
+      margin-top: 24px;
+      text-align: left;
+    }
+
+    .sobre-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .sobre-title-text {
+      font-size: 12px;
+      font-weight: 300;
+      color: var(--gold);
+      letter-spacing: 1px;
+    }
+
+    .sobre-corner {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      border-top: 2px solid var(--gold);
+      border-left: 2px solid var(--gold);
+      top: -10px;
+      left: -10px;
+    }
+
+    .sobre-corner-br {
+      border-top: none;
+      border-left: none;
+      border-bottom: 2px solid var(--gold);
+      border-right: 2px solid var(--gold);
+      top: auto;
+      left: auto;
+      bottom: -10px;
+      right: -10px;
+    }
+
+    .credentials {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 32px 0;
+    }
+
+    .credential-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.5;
+    }
+
+    .credential-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+
+    .awards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 32px;
+    }
+
+    .award-badge {
+      background: var(--gold-pale);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      padding: 6px 14px;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--navy-mid);
+      letter-spacing: 0.5px;
+    }
+
+    /* ===== SERVICOS ===== */
+    #servicos {
+      background: var(--cream);
+    }
+
+    .servicos-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 60px;
+    }
+
+    .servicos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .servico-card {
+      background: var(--white);
+      padding: 48px 40px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      cursor: default;
+    }
+
+    .servico-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .servico-card:hover {
+      background: var(--navy);
+    }
+
+    .servico-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .servico-card:hover .servico-title {
+      color: var(--white);
+    }
+
+    .servico-card:hover .servico-desc {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .servico-card:hover .servico-icon {
+      color: var(--gold);
+    }
+
+    .servico-card:hover .servico-num {
+      color: rgba(255, 255, 255, 0.1);
+    }
+
+    .servico-card:hover .servico-tag {
+      background: rgba(201, 168, 76, 0.15);
+      color: var(--gold);
+    }
+
+    .servico-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 64px;
+      font-weight: 700;
+      color: rgba(13, 31, 53, 0.06);
+      line-height: 1;
+      position: absolute;
+      top: 24px;
+      right: 32px;
+      transition: color 0.4s;
+    }
+
+    .servico-icon {
+      font-size: 36px;
+      margin-bottom: 20px;
+      display: block;
+      transition: color 0.4s;
+      color: var(--navy-mid);
+    }
+
+    .servico-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 12px;
+      line-height: 1.2;
+      transition: color 0.4s;
+    }
+
+    .servico-desc {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin-bottom: 20px;
+      transition: color 0.4s;
+    }
+
+    .servico-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .servico-tag {
+      background: var(--cream);
+      border-radius: 2px;
+      padding: 4px 10px;
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--text-mid);
+      letter-spacing: 0.5px;
+      transition: all 0.4s;
+    }
+
+    /* ===== PROFISSIONAIS ===== */
+    #profissionais {
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #profissionais::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(201, 168, 76, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201, 168, 76, 0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+
+    .profissionais-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .profissionais-carousel-container {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 60px;
+    }
+
+    .profissionais-carousel {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      position: relative;
+      z-index: 1;
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .profissional-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(201, 168, 76, 0.15);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+        background 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+      opacity: 1;
+      transform: scale(1);
+      will-change: opacity, transform;
+    }
+
+    .profissional-card:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(201, 168, 76, 0.4);
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+    }
+
+    .profissional-image {
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+      background: linear-gradient(160deg, rgba(201, 168, 76, 0.1) 0%, rgba(13, 31, 53, 0.5) 100%);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .profissional-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .profissional-card:hover .profissional-image img {
+      transform: scale(1.05);
+    }
+
+    .profissional-info {
+      padding: 28px 24px 32px;
+    }
+
+    .profissional-nome {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+
+    .profissional-especialidade {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 16px;
+    }
+
+    .profissional-desc {
+      font-size: 14px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.6;
+    }
+
+    .carousel-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(201, 168, 76, 0.15);
+      border: 1px solid rgba(201, 168, 76, 0.3);
+      color: var(--gold);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 10;
+      backdrop-filter: blur(10px);
+    }
+
+    .carousel-arrow:hover {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      border-color: transparent;
+      color: var(--navy);
+      transform: translateY(-50%) scale(1.1);
+      box-shadow: 0 8px 24px rgba(201, 168, 76, 0.4);
+    }
+
+    .carousel-arrow:active {
+      transform: translateY(-50%) scale(0.95);
+    }
+
+    .carousel-arrow-prev {
+      left: 0;
+    }
+
+    .carousel-arrow-next {
+      right: 0;
+    }
+
+    .carousel-arrow svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    /* ===== MÉTODO FÊNIX ===== */
+    #fenix {
+      background: var(--cream);
+      position: relative;
+    }
+
+    .fenix-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .fenix-phases {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .phase-item {
+      display: flex;
+      gap: 24px;
+      padding: 28px 0;
+      border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+      position: relative;
+      transition: all 0.3s;
+    }
+
+    .phase-item:last-child {
+      border-bottom: none;
+    }
+
+    .phase-item:hover .phase-num {
+      color: var(--gold);
+    }
+
+    .phase-item:hover .phase-title {
+      color: var(--navy);
+    }
+
+    .phase-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      font-weight: 700;
+      color: rgba(13, 31, 53, 0.1);
+      line-height: 1;
+      flex-shrink: 0;
+      width: 56px;
+      transition: color 0.3s;
+    }
+
+    .phase-content {}
+
+    .phase-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--navy-mid);
+      margin-bottom: 6px;
+      transition: color 0.3s;
+    }
+
+    .phase-desc {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+
+    .phase-duration {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--gold);
+      letter-spacing: 1px;
+      margin-top: 6px;
+    }
+
+    .fenix-visual {
+      position: relative;
+    }
+
+    .fenix-card {
+      background: var(--navy);
+      border-radius: 4px;
+      padding: 56px 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .fenix-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+    }
+
+    .fenix-symbol {
+      font-size: 80px;
+      display: block;
+      text-align: center;
+      margin-bottom: 32px;
+      filter: drop-shadow(0 0 30px rgba(201, 168, 76, 0.4));
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .fenix-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.5;
+      text-align: center;
+      font-style: italic;
+      margin-bottom: 32px;
+    }
+
+    .fenix-quote em {
+      color: var(--gold);
+      font-style: normal;
+      font-weight: 600;
+    }
+
+    .fenix-eventos {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .fenix-evento {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(201, 168, 76, 0.1);
+      border-radius: 2px;
+      padding: 14px 20px;
+    }
+
+    .fenix-evento-nome {
+      font-size: 13px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .fenix-evento-freq {
+      font-size: 11px;
+      font-weight: 300;
+      color: var(--gold);
+      letter-spacing: 0.5px;
+    }
+
+    /* ===== TREINAMENTOS ===== */
+    #treinamentos {
+      background: var(--white);
+    }
+
+    .treina-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 56px;
+    }
+
+    .treina-card {
+      border: 1px solid rgba(13, 31, 53, 0.1);
+      border-radius: 4px;
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s;
+    }
+
+    .treina-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      opacity: 0;
+      transition: opacity 0.4s;
+      z-index: 0;
+    }
+
+    .treina-card:hover::after {
+      opacity: 1;
+    }
+
+    .treina-card:hover .treina-type {
+      color: var(--gold);
+    }
+
+    .treina-card:hover .treina-title {
+      color: var(--white);
+    }
+
+    .treina-card:hover .treina-desc {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .treina-card:hover .treina-info-label {
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .treina-card:hover .treina-info-val {
+      color: var(--gold);
+    }
+
+    .treina-card>* {
+      position: relative;
+      z-index: 1;
+    }
+
+    .treina-type {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      transition: color 0.4s;
+    }
+
+    .treina-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 14px;
+      line-height: 1.2;
+      transition: color 0.4s;
+    }
+
+    .treina-desc {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin-bottom: 28px;
+      transition: color 0.4s;
+    }
+
+    .treina-infos {
+      display: flex;
+      gap: 32px;
+    }
+
+    .treina-info {}
+
+    .treina-info-label {
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 2px;
+      transition: color 0.4s;
+    }
+
+    .treina-info-val {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--navy);
+      transition: color 0.4s;
+    }
+
+    /* ===== PLATAFORMA DIGITAL ===== */
+    #digital {
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #digital::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(201, 168, 76, 0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .digital-layout {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 80px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .digital-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .digital-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(201, 168, 76, 0.1);
+      border-radius: 4px;
+      padding: 28px 24px;
+      transition: all 0.3s;
+    }
+
+    .digital-card:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(201, 168, 76, 0.3);
+    }
+
+    .digital-card-icon {
+      font-size: 28px;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .digital-card-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+
+    .digital-card-desc {
+      font-size: 12px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.5);
+      line-height: 1.6;
+    }
+
+    .digital-card-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--gold);
+      margin-top: 10px;
+      font-style: italic;
+    }
+
+    /* ===== DIFERENCIAIS ===== */
+    #diferenciais {
+      background: var(--cream);
+    }
+
+    .diferenciais-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 56px;
+    }
+
+    .diferencial-item {
+      text-align: center;
+      padding: 40px 24px;
+      transition: all 0.3s;
+    }
+
+    .diferencial-item:hover {
+      transform: translateY(-6px);
+    }
+
+    .diferencial-icon {
+      width: 72px;
+      height: 72px;
+      background: var(--gold-pale);
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin: 0 auto 24px;
+      transition: all 0.3s;
+    }
+
+    .diferencial-item:hover .diferencial-icon {
+      background: var(--navy);
+      border-color: var(--navy);
+    }
+
+    .diferencial-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+
+    .diferencial-desc {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+
+    /* ===== EQUIPE ===== */
+    #equipe {
+      background: var(--white);
+    }
+
+    .equipe-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 56px;
+    }
+
+    .equipe-card {
+      text-align: center;
+      border: 1px solid rgba(13, 31, 53, 0.08);
+      border-radius: 4px;
+      padding: 36px 24px;
+      transition: all 0.4s;
+    }
+
+    .equipe-card:hover {
+      border-color: var(--gold);
+      box-shadow: var(--shadow-gold);
+      transform: translateY(-4px);
+    }
+
+    .equipe-avatar {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      margin: 0 auto 20px;
+      border: 2px solid transparent;
+      transition: border-color 0.4s;
+    }
+
+    .equipe-card:hover .equipe-avatar {
+      border-color: var(--gold);
+    }
+
+    .equipe-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .equipe-role {
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--gold);
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+    }
+
+    .equipe-desc {
+      font-size: 12px;
+      font-weight: 300;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* ===== DEPOIMENTOS ===== */
+    #depoimentos {
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .depo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 56px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .depo-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(201, 168, 76, 0.1);
+      border-radius: 4px;
+      padding: 40px 36px;
+      position: relative;
+      transition: all 0.4s;
+    }
+
+    .depo-card:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(201, 168, 76, 0.3);
+      transform: translateY(-4px);
+    }
+
+    .depo-quote-mark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 80px;
+      line-height: 1;
+      color: rgba(201, 168, 76, 0.2);
+      position: absolute;
+      top: 16px;
+      left: 28px;
+    }
+
+    .depo-text {
+      font-size: 14px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.75);
+      line-height: 1.8;
+      font-style: italic;
+      margin-bottom: 28px;
+      padding-top: 20px;
+    }
+
+    .depo-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .depo-avatar {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .depo-author-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 2px;
+    }
+
+    .depo-author-role {
+      font-size: 11px;
+      font-weight: 300;
+      color: var(--gold);
+      letter-spacing: 0.5px;
+    }
+
+    .depo-stars {
+      color: var(--gold);
+      font-size: 12px;
+      margin-bottom: 16px;
+    }
+
+    /* ===== PREMIOS ===== */
+    #premios {
+      background: var(--gold-pale);
+      padding: 60px 5%;
+      text-align: center;
+    }
+
+    .premios-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text-light);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+    }
+
+    .premios-list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .premio-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      padding: 10px 20px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--navy-mid);
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s;
+    }
+
+    .premio-item:hover {
+      border-color: var(--gold);
+      box-shadow: var(--shadow-gold);
+    }
+
+    .premio-item::before {
+      content: '<Æ';
+      font-size: 14px;
+    }
+
+    /* ===== LOCALIZACAO ===== */
+    #localizacao {
+      background: var(--white);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      padding: 0;
+    }
+
+    .local-info {
+      padding: 80px 6%;
+      background: var(--navy);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .local-map {
+      background: linear-gradient(160deg, #1A3A5C 0%, #0D1F35 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 500px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .local-map-decoration {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(201, 168, 76, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201, 168, 76, 0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    .local-map-pin {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .map-pin-icon {
+      font-size: 64px;
+      display: block;
+      filter: drop-shadow(0 0 30px rgba(201, 168, 76, 0.5));
+      animation: float 3s ease-in-out infinite;
+      margin-bottom: 16px;
+    }
+
+    .map-address {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(201, 168, 76, 0.2);
+      border-radius: 4px;
+      padding: 20px 28px;
+    }
+
+    .map-address p {
+      font-size: 14px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.7;
+      text-align: center;
+    }
+
+    .map-address strong {
+      color: var(--gold);
+    }
+
+    .local-contact-items {
+      margin-top: 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .local-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .local-item-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(201, 168, 76, 0.1);
+      border: 1px solid rgba(201, 168, 76, 0.2);
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .local-item-title {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--gold);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .local-item-val {
+      font-size: 14px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.5;
+    }
+
+    .planos-saude {
+      margin-top: 40px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(201, 168, 76, 0.15);
+    }
+
+    .planos-saude-title {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--gold);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .planos-saude-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .plano-saude-badge {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 2px;
+      padding: 6px 14px;
+      font-size: 12px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* ===== CTA BANNER ===== */
+    #cta {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%);
+      padding: 80px 5%;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(13, 31, 53, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(13, 31, 53, 0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--navy-mid);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .cta-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(40px, 5vw, 64px);
+      font-weight: 300;
+      color: var(--navy);
+      margin-bottom: 20px;
+      line-height: 1.1;
+      letter-spacing: -1px;
+    }
+
+    .cta-title strong {
+      font-weight: 700;
+    }
+
+    .cta-desc {
+      font-size: 16px;
+      font-weight: 300;
+      color: rgba(13, 31, 53, 0.7);
+      margin-bottom: 40px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+    }
+
+    .cta-btn {
+      background: var(--navy);
+      color: var(--gold);
+      padding: 18px 52px;
+      border: none;
+      border-radius: 2px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s;
+      box-shadow: 0 8px 32px rgba(13, 31, 53, 0.2);
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 48px rgba(13, 31, 53, 0.3);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #08131F;
+      padding: 80px 5% 40px;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 60px;
+      padding-bottom: 60px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .footer-brand {}
+
+    .footer-logo-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px;
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: 2px;
+      margin-bottom: 4px;
+    }
+
+    .footer-logo-sub {
+      font-size: 11px;
+      font-weight: 300;
+      color: var(--gold);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .footer-brand-desc {
+      font-size: 13px;
+      font-weight: 300;
+      line-height: 1.7;
+      max-width: 280px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .social-link {
+      width: 36px;
+      height: 36px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .social-link:hover {
+      background: var(--gold);
+      border-color: var(--gold);
+    }
+
+    .footer-col-title {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.55);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    .footer-crp {
+      font-size: 12px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.3);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .footer-crp::before {
+      content: '';
+      width: 4px;
+      height: 4px;
+      background: var(--gold);
+      border-radius: 50%;
+      display: block;
+    }
+
+    /* ===== WHATSAPP BTN ===== */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      text-decoration: none;
+      box-shadow: 0 8px 32px rgba(37, 211, 102, 0.4);
+      z-index: 999;
+      transition: all 0.3s;
+      animation: pulse-btn 3s ease-in-out infinite;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-12px);
+      }
+    }
+
+    @keyframes pulse-ring {
+
+      0%,
+      100% {
+        opacity: 0.3;
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      50% {
+        opacity: 0.6;
+        transform: translate(-50%, -50%) scale(1.05);
+      }
+    }
+
+    @keyframes pulse-btn {
+
+      0%,
+      100% {
+        box-shadow: 0 8px 32px rgba(37, 211, 102, 0.4);
+      }
+
+      50% {
+        box-shadow: 0 8px 48px rgba(37, 211, 102, 0.6);
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 {
+      transition-delay: 0.1s;
+    }
+
+    .reveal-delay-2 {
+      transition-delay: 0.2s;
+    }
+
+    .reveal-delay-3 {
+      transition-delay: 0.3s;
+    }
+
+    .reveal-delay-4 {
+      transition-delay: 0.4s;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .nav-links {
+        display: none;
+      }
+
+      #sobre,
+      .fenix-layout,
+      .digital-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .profissionais-carousel {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .profissionais-carousel-container {
+        padding: 0 50px;
+      }
+
+      .carousel-arrow {
+        width: 40px;
+        height: 40px;
+      }
+
+      .servicos-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .diferenciais-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .treina-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .equipe-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .depo-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      #localizacao {
+        grid-template-columns: 1fr;
+      }
+
+      /* Ajuste para hero em tablet */
+      #hero {
+        background-position: center center;
+        padding: 100px 5% 60px;
+        justify-content: center;
+      }
+
+      #hero::before {
+        background: linear-gradient(90deg, rgba(13, 31, 53, 0.80) 0%, rgba(13, 31, 53, 0.65) 50%, rgba(13, 31, 53, 0.75) 100%);
+      }
+
+      .hero-content {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 640px) {
+      section {
+        padding: 60px 4%;
+      }
+
+      .profissionais-carousel {
+        grid-template-columns: 1fr;
+      }
+
+      .profissionais-carousel-container {
+        padding: 0 44px;
+      }
+
+      .carousel-arrow {
+        width: 36px;
+        height: 36px;
+      }
+
+      .carousel-arrow svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      .profissional-image {
+        height: 350px;
+      }
+
+      .servicos-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .diferenciais-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .equipe-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-stats {
+        gap: 24px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
+
+      /* Ajuste para hero em mobile */
+      #hero {
+        min-height: 100vh;
+        background-position: center center;
+        background-size: cover;
+        padding: 80px 4% 60px;
+        justify-content: center;
+      }
+
+      #hero::before {
+        background: linear-gradient(180deg, rgba(13, 31, 53, 0.88) 0%, rgba(13, 31, 53, 0.75) 50%, rgba(13, 31, 53, 0.85) 100%);
+      }
+
+      .hero-content {
+        max-width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#hero" class="nav-logo">
+      <div class="nav-logo-icon">C</div>
+      <div>
+        <span class="nav-logo-text">CASULLI</span>
+        <span class="nav-logo-sub">Clínica Integrada</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#profissionais">Profissionais</a></li>
+      <li><a href="#fenix">Método Fênix</a></li>
+      <li><a href="#treinamentos">Treinamentos</a></li>
+      <li><a href="#equipe">Equipe</a></li>
+      <li><a href="#localizacao">Contato</a></li>
+      <li><a href="https://wa.me/5579999999999" class="nav-cta">Agendar</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg-pattern"></div>
+    <div class="hero-grid-lines"></div>
+
+    <div class="hero-content">
+      <div class="hero-eyebrow">Clínica Integrada de Alta Performance</div>
+
+      <h1 class="hero-title">
+        <em>Ciência que</em>
+        <strong>transforma.<br>Método que</strong>
+        <em>liberta.</em>
+      </h1>
+
+      <p class="hero-subtitle">
+        Neuropsicologia, psicologia e nutrição integradas para levar você à sua melhor versão  com base científica,
+        atendimento humanizado e resultados mensuráveis.
+      </p>
+
+      <div class="hero-btns">
+        <a href="https://wa.me/5579999999999" class="btn-primary">Agendar Sessão Estratégica</a>
+        <a href="#servicos" class="btn-outline">Conhecer Serviços</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-number">7+</div>
+          <div class="stat-label">Anos de Experiência</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">1.500+</div>
+          <div class="stat-label">Vidas Transformadas</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">3</div>
+          <div class="stat-label">Especialidades</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">4</div>
+          <div class="stat-label">Prêmios de Excelência</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-image-side">
+      <div class="hero-image-overlay"></div>
+      <div class="hero-visual">
+        <div class="hero-butterfly">></div>
+        <div class="hero-decoration"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRÊMIOS -->
+  <div id="premios">
+    <p class="premios-title">Reconhecimentos & Premiações</p>
+    <div class="premios-list">
+      <div class="premio-item">Melhores do Ano  Aracaju</div>
+      <div class="premio-item">Quem Fez e Faz História</div>
+      <div class="premio-item">Troféu Imprensa</div>
+      <div class="premio-item">Gente Gentíssima</div>
+      <div class="premio-item">DigiTalks Summit Brasil</div>
+      <div class="premio-item">Casulli no Horizonte Jardins</div>
+    </div>
+  </div>
+
+  <!-- SOBRE -->
+  <section id="sobre">
+    <div class="sobre-image reveal">
+      <div class="sobre-corner"></div>
+      <div class="sobre-corner sobre-corner-br"></div>
+      <div class="sobre-img-frame">
+        <span class="sobre-butterfly-big">></span>
+        <div class="sobre-name-card">
+          <div class="sobre-name">Lizandra Menezes Soares</div>
+          <div class="sobre-title-text">Neuropsicóloga | CRP 19/003267</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sobre-content reveal reveal-delay-2">
+      <div class="section-eyebrow">Sobre a Fundadora</div>
+      <h2 class="section-title">Uma das vozes mais<br><em>relevantes</em> da neuropsicologia<br>em Sergipe</h2>
+
+      <div class="credentials">
+        <div class="credential-item">
+          <div class="credential-dot"></div>
+          Psicóloga (CRP 19/003267) graduada pela Faculdade Pio Décimo  mais de 7 anos de experiência clínica
+        </div>
+        <div class="credential-item">
+          <div class="credential-dot"></div>
+          Mestre em Psicologia pela Universidade Federal de Sergipe (UFS)
+        </div>
+        <div class="credential-item">
+          <div class="credential-dot"></div>
+          Especialista em Avaliação Psicológica e Neuropsicologia pelo IPOG
+        </div>
+        <div class="credential-item">
+          <div class="credential-dot"></div>
+          Especialização em Terapia Cognitivo Comportamental (TCC) pela PUC/RS
+        </div>
+        <div class="credential-item">
+          <div class="credential-dot"></div>
+          MBA em Reabilitação Neuropsicológica pelo IPOG
+        </div>
+        <div class="credential-item">
+          <div class="credential-dot"></div>
+          Professora universitária e palestrante nacional  presença confirmada no DigiTalks Summit Brasil
+        </div>
+        <div class="credential-item">
+          <div class="credential-dot"></div>
+          Pós-graduanda em Psicoterapia para Adultos Neurodivergentes
+        </div>
+      </div>
+
+      <p style="font-size:14px;color:var(--text-mid);line-height:1.75;margin-bottom:28px;">
+        Fundadora e idealizadora do Casulli, Lizandra criou um espaço onde <strong>ciência, acolhimento e performance
+          humana se encontram</strong>. Seu objetivo é claro: transformar vidas com método, ética e resultados
+        mensuráveis  formando pacientes mais funcionais e profissionais mais preparados para os desafios da vida
+        moderna.
+      </p>
+
+      <div class="awards">
+        <span class="award-badge">Neurofeedback</span>
+        <span class="award-badge">Reabilitação Cognitiva</span>
+        <span class="award-badge">Avaliação Neuropsicológica</span>
+        <span class="award-badge">TCC</span>
+        <span class="award-badge">Alta Performance</span>
+        <span class="award-badge">Neurodivergência</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section id="servicos">
+    <div class="servicos-header">
+      <div>
+        <div class="section-eyebrow reveal">Especialidades</div>
+        <h2 class="section-title reveal reveal-delay-1">O que o <em>Casulli</em><br>oferece para você</h2>
+      </div>
+      <p class="section-desc reveal reveal-delay-2" style="text-align:right;">
+        Atendimento presencial e online, integrando saúde mental, cognitiva e nutricional em um único espaço.
+      </p>
+    </div>
+
+    <div class="servicos-grid reveal">
+      <div class="servico-card">
+        <span class="servico-num">01</span>
+        <span class="servico-icon">>à</span>
+        <div class="servico-title">Neuropsicologia</div>
+        <div class="servico-desc">Avaliação e reabilitação neuropsicológica completa, com protocolos baseados em
+          evidências para crianças, adolescentes e adultos.</div>
+        <div class="servico-tags">
+          <span class="servico-tag">Avaliação</span>
+          <span class="servico-tag">Reabilitação</span>
+          <span class="servico-tag">TDAH</span>
+          <span class="servico-tag">TEA</span>
+        </div>
+      </div>
+
+      <div class="servico-card">
+        <span class="servico-num">02</span>
+        <span class="servico-icon">=¬</span>
+        <div class="servico-title">Psicoterapia</div>
+        <div class="servico-desc">Psicoterapia individual com abordagem TCC e outras técnicas, voltada para ansiedade,
+          depressão, traumas e desenvolvimento pessoal.</div>
+        <div class="servico-tags">
+          <span class="servico-tag">TCC</span>
+          <span class="servico-tag">Ansiedade</span>
+          <span class="servico-tag">Depressão</span>
+          <span class="servico-tag">Trauma</span>
+        </div>
+      </div>
+
+      <div class="servico-card">
+        <span class="servico-num">03</span>
+        <span class="servico-icon">>W</span>
+        <div class="servico-title">Nutrição Integrada</div>
+        <div class="servico-desc">Acompanhamento nutricional alinhado à saúde mental e cognitiva, potencializando os
+          resultados terapêuticos com alimentação funcional.</div>
+        <div class="servico-tags">
+          <span class="servico-tag">Alimentação</span>
+          <span class="servico-tag">Comportamental</span>
+          <span class="servico-tag">Cognitiva</span>
+        </div>
+      </div>
+
+      <div class="servico-card">
+        <span class="servico-num">04</span>
+        <span class="servico-icon">¡</span>
+        <div class="servico-title">Alta Performance</div>
+        <div class="servico-desc">Programas estruturados para líderes, executivos e empreendedores que desejam maximizar
+          produtividade, foco e resiliência emocional.</div>
+        <div class="servico-tags">
+          <span class="servico-tag">Produtividade</span>
+          <span class="servico-tag">Foco</span>
+          <span class="servico-tag">Liderança</span>
+        </div>
+      </div>
+
+      <div class="servico-card">
+        <span class="servico-num">05</span>
+        <span class="servico-icon">
+          << /span>
+            <div class="servico-title">Atendimento Online</div>
+            <div class="servico-desc">Todas as especialidades disponíveis de forma remota, para pacientes de Sergipe, do
+              Brasil inteiro e do exterior.</div>
+            <div class="servico-tags">
+              <span class="servico-tag">Videoconsulta</span>
+              <span class="servico-tag">Todo o Brasil</span>
+              <span class="servico-tag">Flexível</span>
+            </div>
+      </div>
+
+      <div class="servico-card">
+        <span class="servico-num">06</span>
+        <span class="servico-icon">=e</span>
+        <div class="servico-title">Grupos Terapêuticos</div>
+        <div class="servico-desc">Encontros em grupo para temas como ansiedade, autoestima e performance  uma
+          experiência transformadora de pertencimento e suporte mútuo.</div>
+        <div class="servico-tags">
+          <span class="servico-tag">Online</span>
+          <span class="servico-tag">Presencial</span>
+          <span class="servico-tag">Comunidade</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROFISSIONAIS -->
+  <section id="profissionais">
+    <div class="profissionais-header">
+      <div class="section-eyebrow reveal" style="justify-content:center;">Nossa Equipe</div>
+      <h2 class="section-title light reveal reveal-delay-1">Nossos <em>Profissionais</em></h2>
+      <p class="section-desc light reveal reveal-delay-2" style="text-align:center;margin:0 auto;max-width:700px;">
+        Conheça os especialistas que irão acompanhar você nesta jornada de transformação, desenvolvimento e alta
+        performance.
+      </p>
+    </div>
+
+    <div class="profissionais-carousel-container reveal">
+      <button class="carousel-arrow carousel-arrow-prev" aria-label="Anterior">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+
+      <div class="profissionais-carousel">
+        <div class="profissional-card">
+          <div class="profissional-image">
+            <img src="casulli/BRENO VICENTE.png" alt="Breno Vicente">
+          </div>
+          <div class="profissional-info">
+            <h3 class="profissional-nome">Breno Vicente</h3>
+            <p class="profissional-especialidade">Nutricionista</p>
+            <p class="profissional-desc">Nutrição integrativa e comportamental voltada para saúde mental e cognitiva.
+            </p>
+          </div>
+        </div>
+
+        <div class="profissional-card">
+          <div class="profissional-image">
+            <img src="casulli/CAROLINA BEZERRA.png" alt="Carolina Bezerra">
+          </div>
+          <div class="profissional-info">
+            <h3 class="profissional-nome">Carolina Bezerra</h3>
+            <p class="profissional-especialidade">Psicóloga</p>
+            <p class="profissional-desc">Especialista em avaliação e reabilitação neuropsicológica com foco em TDAH e
+              TEA.</p>
+          </div>
+        </div>
+
+        <div class="profissional-card">
+          <div class="profissional-image">
+            <img src="casulli/CRISLAYNE BISPO - FISIOTERAPEUTA.png" alt="Crislayne Bispo">
+          </div>
+          <div class="profissional-info">
+            <h3 class="profissional-nome">Crislayne Bispo</h3>
+            <p class="profissional-especialidade">Fisioterapeuta</p>
+            <p class="profissional-desc">Fisioterapia neurofuncional e reabilitação psicossomática para alta
+              performance.</p>
+          </div>
+        </div>
+
+        <div class="profissional-card">
+          <div class="profissional-image">
+            <img src="casulli/ESTEVÃO RODRIGUES - PSICOLOGA.png" alt="Estevão Rodrigues">
+          </div>
+          <div class="profissional-info">
+            <h3 class="profissional-nome">Estevão Rodrigues</h3>
+            <p class="profissional-especialidade">Psicólogo</p>
+            <p class="profissional-desc">Psicoterapia individual com TCC para ansiedade, depressão e traumas.</p>
+          </div>
+        </div>
+
+        <div class="profissional-card">
+          <div class="profissional-image">
+            <img src="casulli/KAROLINA VASCONCELOS.png" alt="Karolina Vasconcelos">
+          </div>
+          <div class="profissional-info">
+            <h3 class="profissional-nome">Karolina Vasconcelos</h3>
+            <p class="profissional-especialidade">Psicóloga</p>
+            <p class="profissional-desc">Especialista em desenvolvimento pessoal e processos de transformação emocional.
+            </p>
+          </div>
+        </div>
+
+        <div class="profissional-card">
+          <div class="profissional-image">
+            <img src="casulli/LIZANDRA SOARES- PSICOLOGA.png" alt="Lizandra Soares">
+          </div>
+          <div class="profissional-info">
+            <h3 class="profissional-nome">Lizandra Soares</h3>
+            <p class="profissional-especialidade">Psicóloga</p>
+            <p class="profissional-desc">Psicoterapia clínica com abordagem integrativa e foco em autoconhecimento.</p>
+          </div>
+        </div>
+
+        <div class="profissional-card">
+          <div class="profissional-image">
+            <img src="casulli/MARIA CEIÇA - PSICOLOGA.png" alt="Maria Ceiça">
+          </div>
+          <div class="profissional-info">
+            <h3 class="profissional-nome">Maria Ceiça</h3>
+            <p class="profissional-especialidade">Psicóloga</p>
+            <p class="profissional-desc">Especialista em terapia cognitivo-comportamental e avaliação psicológica.</p>
+          </div>
+        </div>
+
+        <div class="profissional-card">
+          <div class="profissional-image">
+            <img src="casulli/MIRELLA BARRETO - PSICOLOGA.png" alt="Mirella Barreto">
+          </div>
+          <div class="profissional-info">
+            <h3 class="profissional-nome">Mirella Barreto</h3>
+            <p class="profissional-especialidade">Psicóloga</p>
+            <p class="profissional-desc">Psicoterapia com foco em ansiedade e desenvolvimento de habilidades emocionais.
+            </p>
+          </div>
+        </div>
+
+        <div class="profissional-card">
+          <div class="profissional-image">
+            <img src="casulli/RITA BATISTA.png" alt="Rita Batista">
+          </div>
+          <div class="profissional-info">
+            <h3 class="profissional-nome">Rita Batista</h3>
+            <p class="profissional-especialidade">Psicóloga</p>
+            <p class="profissional-desc">Especialista em saúde mental e processos de mudança comportamental.</p>
+          </div>
+        </div>
+
+        <div class="profissional-card">
+          <div class="profissional-image">
+            <img src="casulli/THAISLANE FORTUNA - PSICOLOGA.png" alt="Thaislane Fortuna">
+          </div>
+          <div class="profissional-info">
+            <h3 class="profissional-nome">Thaislane Fortuna</h3>
+            <p class="profissional-especialidade">Psicóloga</p>
+            <p class="profissional-desc">Psicoterapia individual com abordagem humanista e TCC aplicada.</p>
+          </div>
+        </div>
+
+        <div class="profissional-card">
+          <div class="profissional-image">
+            <img src="casulli/VERCIANY - PSICOLOGA.png" alt="Verciany">
+          </div>
+          <div class="profissional-info">
+            <h3 class="profissional-nome">Verciany</h3>
+            <p class="profissional-especialidade">Psicóloga</p>
+            <p class="profissional-desc">Especialista em desenvolvimento humano e processos terapêuticos integrativos.
+            </p>
+          </div>
+        </div>
+
+        <div class="profissional-card">
+          <div class="profissional-image">
+            <img src="casulli/VITORIA REGINA.png" alt="Vitória Regina">
+          </div>
+          <div class="profissional-info">
+            <h3 class="profissional-nome">Vitória Regina</h3>
+            <p class="profissional-especialidade">Psicóloga</p>
+            <p class="profissional-desc">Psicoterapia com foco em performance e desenvolvimento de potencial pessoal.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <button class="carousel-arrow carousel-arrow-next" aria-label="Próximo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+    </div>
+
+    <p
+      style="text-align:center;margin-top:40px;font-size:12px;color:rgba(255,255,255,0.35);font-weight:300;position:relative;z-index:1;">
+      Todos os profissionais são devidamente registrados em seus conselhos regionais.
+    </p>
+  </section>
+
+  <!-- MÉTODO FÊNIX -->
+  <section id="fenix">
+    <div class="fenix-layout">
+      <div>
+        <div class="section-eyebrow reveal">Metodologia Exclusiva</div>
+        <h2 class="section-title reveal reveal-delay-1">O Programa <em>Fênix</em></h2>
+        <p class="section-desc reveal reveal-delay-2" style="margin-bottom:40px;">
+          Uma abordagem proprietária de transformação emocional e cognitiva estruturada em quatro fases sequenciais.
+          Baseada em neurociência, TCC e desenvolvimento humano.
+        </p>
+
+        <div class="fenix-phases">
+          <div class="phase-item reveal">
+            <div class="phase-num">01</div>
+            <div class="phase-content">
+              <div class="phase-title">Identificação</div>
+              <div class="phase-desc">Mapeamento preciso dos padrões cognitivos, comportamentais e emocionais que
+                limitam seu potencial.</div>
+              <div class="phase-duration">1  2 semanas</div>
+            </div>
+          </div>
+          <div class="phase-item reveal reveal-delay-1">
+            <div class="phase-num">02</div>
+            <div class="phase-content">
+              <div class="phase-title">Desconstrução</div>
+              <div class="phase-desc">Ruptura estruturada de crenças limitantes e comportamentos disfuncionais com base
+                científica.</div>
+              <div class="phase-duration">2  3 semanas</div>
+            </div>
+          </div>
+          <div class="phase-item reveal reveal-delay-2">
+            <div class="phase-num">03</div>
+            <div class="phase-content">
+              <div class="phase-title">Reprogramação</div>
+              <div class="phase-desc">Instalação de novos padrões cognitivos e emocionais utilizando técnicas de
+                neuroplasticidade e TCC.</div>
+              <div class="phase-duration">3  4 semanas</div>
+            </div>
+          </div>
+          <div class="phase-item reveal reveal-delay-3">
+            <div class="phase-num">04</div>
+            <div class="phase-content">
+              <div class="phase-title">Consolidação</div>
+              <div class="phase-desc">Fixação das mudanças com práticas estruturadas, monitoramento de resultados e
+                manutenção de longo prazo.</div>
+              <div class="phase-duration">2  4 semanas</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fenix-visual reveal reveal-delay-2">
+        <div class="fenix-card">
+          <span class="fenix-symbol">></span>
+          <p class="fenix-quote">
+            "Você não está quebrado. Você está tentando voar com <em>asas que ainda não descobriu</em>."
+          </p>
+          <div class="fenix-eventos">
+            <div class="fenix-evento">
+              <span class="fenix-evento-nome">Webinar Fênix</span>
+              <span class="fenix-evento-freq">Semanal · 1 hora</span>
+            </div>
+            <div class="fenix-evento">
+              <span class="fenix-evento-nome">Desafio Fênix 5 Dias</span>
+              <span class="fenix-evento-freq">Trimestral · Online</span>
+            </div>
+            <div class="fenix-evento">
+              <span class="fenix-evento-nome">Workshop Fênix</span>
+              <span class="fenix-evento-freq">Trimestral · 5 horas</span>
+            </div>
+            <div class="fenix-evento">
+              <span class="fenix-evento-nome">Programa Fênix 8 Semanas</span>
+              <span class="fenix-evento-freq">EAD + grupo + lives</span>
+            </div>
+            <div class="fenix-evento">
+              <span class="fenix-evento-nome">Imersão Fênix Anual</span>
+              <span class="fenix-evento-freq">Presencial · 2 dias</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TREINAMENTOS -->
+  <section id="treinamentos">
+    <div class="section-eyebrow reveal">Para Empresas e Profissionais</div>
+    <h2 class="section-title reveal reveal-delay-1">Treinamentos e <em>Formações</em></h2>
+    <p class="section-desc reveal reveal-delay-2">
+      Lizandra leva o conhecimento da neurociência aplicada diretamente para empresas, equipes e profissionais de saúde
+      que desejam resultados reais.
+    </p>
+
+    <div class="treina-grid">
+      <div class="treina-card reveal">
+        <div class="treina-type">Presencial · Empresas</div>
+        <div class="treina-title">Workshop Performance Cognitiva</div>
+        <div class="treina-desc">Treinamento intensivo para equipes corporativas e lideranças sobre gestão emocional,
+          foco, produtividade e neurociência aplicada ao trabalho.</div>
+        <div class="treina-infos">
+          <div class="treina-info">
+            <div class="treina-info-label">Carga</div>
+            <div class="treina-info-val">8 horas</div>
+          </div>
+          <div class="treina-info">
+            <div class="treina-info-label">Formato</div>
+            <div class="treina-info-val">In company</div>
+          </div>
+          <div class="treina-info">
+            <div class="treina-info-label">Investimento</div>
+            <div class="treina-info-val">R$ 3.500+</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="treina-card reveal reveal-delay-1">
+        <div class="treina-type">Presencial · Líderes</div>
+        <div class="treina-title">Imersão Alta Performance</div>
+        <div class="treina-desc">Dois dias de imersão completa para empresários e gestores que desejam desenvolver
+          inteligência emocional, resiliência e clareza estratégica.</div>
+        <div class="treina-infos">
+          <div class="treina-info">
+            <div class="treina-info-label">Carga</div>
+            <div class="treina-info-val">16 horas</div>
+          </div>
+          <div class="treina-info">
+            <div class="treina-info-label">Formato</div>
+            <div class="treina-info-val">Grupos</div>
+          </div>
+          <div class="treina-info">
+            <div class="treina-info-label">Investimento</div>
+            <div class="treina-info-val">R$ 1.200+/pessoa</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="treina-card reveal reveal-delay-2">
+        <div class="treina-type">Presencial · Psicólogos</div>
+        <div class="treina-title">Formação em Neuropsicologia Aplicada</div>
+        <div class="treina-desc">Formação aprofundada para psicólogos e profissionais de saúde que desejam ampliar sua
+          atuação com avaliação neuropsicológica e técnicas especializadas.</div>
+        <div class="treina-infos">
+          <div class="treina-info">
+            <div class="treina-info-label">Carga</div>
+            <div class="treina-info-val">40 horas</div>
+          </div>
+          <div class="treina-info">
+            <div class="treina-info-label">Formato</div>
+            <div class="treina-info-val">Presencial</div>
+          </div>
+          <div class="treina-info">
+            <div class="treina-info-label">Investimento</div>
+            <div class="treina-info-val">R$ 3.500+/pessoa</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="treina-card reveal reveal-delay-3">
+        <div class="treina-type">Online · EAD</div>
+        <div class="treina-title">Programa Fênix 8 Semanas</div>
+        <div class="treina-desc">Programa online completo de transformação emocional e cognitiva, com aulas gravadas,
+          encontros ao vivo e grupo exclusivo de acompanhamento.</div>
+        <div class="treina-infos">
+          <div class="treina-info">
+            <div class="treina-info-label">Duração</div>
+            <div class="treina-info-val">8 semanas</div>
+          </div>
+          <div class="treina-info">
+            <div class="treina-info-label">Formato</div>
+            <div class="treina-info-val">EAD + Live</div>
+          </div>
+          <div class="treina-info">
+            <div class="treina-info-label">Investimento</div>
+            <div class="treina-info-val">R$ 997+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLATAFORMA DIGITAL -->
+  <section id="digital">
+    <div class="digital-layout">
+      <div class="digital-cards reveal">
+        <div class="digital-card">
+          <span class="digital-card-icon">=Ú</span>
+          <div class="digital-card-title">Curso de Produtividade</div>
+          <div class="digital-card-desc">4 a 6 módulos gravados com técnicas de neurociência para produtividade real
+          </div>
+          <div class="digital-card-price">A partir de R$ 297</div>
+        </div>
+        <div class="digital-card">
+          <span class="digital-card-icon">=Ö</span>
+          <div class="digital-card-title">E-book Performance Cognitiva</div>
+          <div class="digital-card-desc">Guia completo em PDF + áudio para desenvolver sua melhor versão</div>
+          <div class="digital-card-price">A partir de R$ 47</div>
+        </div>
+        <div class="digital-card">
+          <span class="digital-card-icon">=e</span>
+          <div class="digital-card-title">Grupo Terapêutico Online</div>
+          <div class="digital-card-desc">Encontros mensais em grupo para saúde mental e performance</div>
+          <div class="digital-card-price">A partir de R$ 197/mês</div>
+        </div>
+        <div class="digital-card">
+          <span class="digital-card-icon">P</span>
+          <div class="digital-card-title">Comunidade Casulli</div>
+          <div class="digital-card-desc">Conteúdo exclusivo, grupo VIP e lives mensais com Lizandra</div>
+          <div class="digital-card-price">A partir de R$ 97/mês</div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-2">
+        <div class="section-eyebrow">Plataforma Digital</div>
+        <h2 class="section-title light">Aprenda <em>onde estiver</em><br>e quando quiser</h2>
+        <p class="section-desc light" style="margin-bottom:36px;">
+          Nossa plataforma EAD traz o conteúdo do Casulli para qualquer lugar do Brasil. Cursos, e-books, grupos e
+          comunidade à disposição 24 horas por dia.
+        </p>
+        <a href="https://wa.me/5579999999999" class="btn-primary">Acessar Produtos Digitais</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAIS -->
+  <section id="diferenciais">
+    <div style="text-align:center;">
+      <div class="section-eyebrow reveal" style="justify-content:center;">Por que o Casulli</div>
+      <h2 class="section-title reveal reveal-delay-1">Nossos <em>diferenciais</em></h2>
+    </div>
+
+    <div class="diferenciais-grid">
+      <div class="diferencial-item reveal">
+        <div class="diferencial-icon">=,</div>
+        <div class="diferencial-title">Evidência Científica</div>
+        <div class="diferencial-desc">Todos os protocolos são baseados em pesquisas científicas atualizadas. Nada de
+          achismo  apenas ciência com resultados comprováveis.</div>
+      </div>
+      <div class="diferencial-item reveal reveal-delay-1">
+        <div class="diferencial-icon">&lt;¯</div>
+        <div class="diferencial-title">Abordagem Integrada</div>
+        <div class="diferencial-desc">Mente, emoção e corpo trabalhados juntos. Neuropsicologia, psicoterapia e
+          nutrição em sinergia para transformações reais e duradouras.</div>
+      </div>
+      <div class="diferencial-item reveal reveal-delay-2">
+        <div class="diferencial-icon">=Ê</div>
+        <div class="diferencial-title">Resultados Mensuráveis</div>
+        <div class="diferencial-desc">Relatórios evolutivos, avaliações periódicas e metas clínicas claras. Você
+          acompanha seu progresso em cada etapa do processo.</div>
+      </div>
+      <div class="diferencial-item reveal reveal-delay-1">
+        <div class="diferencial-icon">&lt;Æ</div>
+        <div class="diferencial-title">Autoridade Reconhecida</div>
+        <div class="diferencial-desc">7+ anos de experiência, mestrado, 4 prêmios de excelência e presença em
+          eventos nacionais. Referência consolidada em Sergipe.</div>
+      </div>
+      <div class="diferencial-item reveal reveal-delay-2">
+        <div class="diferencial-icon">&lt; </div>
+        <div class="diferencial-title">Presença Híbrida</div>
+        <div class="diferencial-desc">Atendimento presencial em Aracaju e online para todo o Brasil.
+          Flexibilidade sem abrir mão da qualidade e da proximidade.</div>
+      </div>
+      <div class="diferencial-item reveal reveal-delay-3">
+        <div class="diferencial-icon">d </div>
+        <div class="diferencial-title">Acolhimento Genuíno</div>
+        <div class="diferencial-desc">Um ambiente seguro, ético e sem julgamentos. Aqui você encontra cuidado,
+          clareza e o espaço para o seu recomeço.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EQUIPE -->
+  <section id="equipe">
+    <div class="section-eyebrow reveal">Nossos Especialistas</div>
+    <h2 class="section-title reveal reveal-delay-1">A <em>equipe</em> que cuida de você</h2>
+    <p class="section-desc reveal reveal-delay-2">
+      Profissionais selecionados com rigor técnico e alinhamento de valores, comprometidos com a sua transformação.
+    </p>
+
+    <div class="equipe-grid">
+      <div class="equipe-card reveal">
+        <div class="equipe-avatar">>à</div>
+        <div class="equipe-name">Lizandra Soares</div>
+        <div class="equipe-role">Neuropsicóloga | Fundadora</div>
+        <div class="equipe-desc">CRP 19/003267 · Mestre em Psicologia (UFS) · Especialista em Neuropsicologia e TCC
+        </div>
+      </div>
+      <div class="equipe-card reveal reveal-delay-1">
+        <div class="equipe-avatar">=¬</div>
+        <div class="equipe-name">Equipe de Psicologia</div>
+        <div class="equipe-role">Psicólogas Clínicas</div>
+        <div class="equipe-desc">Estagiárias supervisionadas e psicólogas em formação contínua com foco em TCC e
+          avaliação psicológica</div>
+      </div>
+      <div class="equipe-card reveal reveal-delay-2">
+        <div class="equipe-avatar">>W</div>
+        <div class="equipe-name">Nutrição Clínica</div>
+        <div class="equipe-role">Nutricionista</div>
+        <div class="equipe-desc">Especialista em nutrição comportamental e funcional integrada à saúde mental e
+          cognitiva</div>
+      </div>
+      <div class="equipe-card reveal reveal-delay-3">
+        <div class="equipe-avatar">=Ë</div>
+        <div class="equipe-name">Gestão Clínica</div>
+        <div class="equipe-role">Coordenadora da Clínica</div>
+        <div class="equipe-desc">Garante a excelência operacional e a experiência completa do paciente desde o primeiro
+          contato</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section id="depoimentos">
+    <div style="text-align:center;position:relative;z-index:1;">
+      <div class="section-eyebrow reveal" style="justify-content:center;">Histórias Reais</div>
+      <h2 class="section-title light reveal reveal-delay-1">O que dizem <em>nossos pacientes</em></h2>
+    </div>
+
+    <div class="depo-grid">
+      <div class="depo-card reveal">
+        <div class="depo-quote-mark">"</div>
+        <div class="depo-stars"></div>
+        <div class="depo-text">O Casulli foi um divisor de águas na minha vida. Depois de anos lutando contra a
+          ansiedade, finalmente entendi o que estava acontecendo no meu cérebro e aprendi ferramentas reais para lidar
+          com isso. A Lizandra é incrível  rigorosa e acolhedora ao mesmo tempo.</div>
+        <div class="depo-author">
+          <div class="depo-avatar">M</div>
+          <div>
+            <div class="depo-author-name">Marina C.</div>
+            <div class="depo-author-role">Empreendedora · Aracaju</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="depo-card reveal reveal-delay-1">
+        <div class="depo-quote-mark">"</div>
+        <div class="depo-stars"></div>
+        <div class="depo-text">Trouxe meu filho para avaliação neuropsicológica e foi transformador para toda a família.
+          O diagnóstico preciso e o plano de reabilitação fizeram toda a diferença. Equipe excepcional, estrutura
+          impecável.</div>
+        <div class="depo-author">
+          <div class="depo-avatar">A</div>
+          <div>
+            <div class="depo-author-name">Andréa F.</div>
+            <div class="depo-author-role">Mãe · São Cristóvão</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="depo-card reveal reveal-delay-2">
+        <div class="depo-quote-mark">"</div>
+        <div class="depo-stars"></div>
+        <div class="depo-text">O Workshop de Performance Cognitiva que fizemos com a equipe da empresa foi o melhor
+          investimento em gente que já fizemos. Em 8 horas, a equipe saiu transformada  com mais foco, menos conflito e
+          muito mais resultado.</div>
+        <div class="depo-author">
+          <div class="depo-avatar">R</div>
+          <div>
+            <div class="depo-author-name">Ricardo M.</div>
+            <div class="depo-author-role">Diretor de RH · Aracaju</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta">
+    <div class="cta-content reveal">
+      <div class="cta-eyebrow">Pronto para começar?</div>
+      <h2 class="cta-title">Agende sua <strong>Sessão<br>Estratégica</strong> agora</h2>
+      <p class="cta-desc">Uma conversa de 90 minutos que pode mudar a trajetória da sua vida  com diagnóstico preciso e
+        um plano feito para você.</p>
+      <a href="https://wa.me/5579999999999" class="cta-btn">Falar com a equipe agora</a>
+    </div>
+  </section>
+
+  <!-- LOCALIZAÇÃO -->
+  <div id="localizacao">
+    <div class="local-info">
+      <div class="section-eyebrow" style="margin-bottom:24px;">Onde estamos</div>
+      <img src="casulli/logo/LOGO - SITE CASULLI  .png" alt="Logo Casulli"
+        style="max-width: 300px; margin-bottom: 32px;">
+
+      <div class="local-contact-items">
+        <div class="local-item">
+          <div class="local-item-icon">=Í</div>
+          <div>
+            <div class="local-item-title">Endereço</div>
+            <div class="local-item-val">Av. Dr. José Machado de Souza, 120<br>Aracaju, Sergipe  Brasil</div>
+          </div>
+        </div>
+        <div class="local-item">
+          <div class="local-item-icon">=ñ</div>
+          <div>
+            <div class="local-item-title">WhatsApp</div>
+            <div class="local-item-val">(79) 9 9999-9999</div>
+          </div>
+        </div>
+        <div class="local-item">
+          <div class="local-item-icon">=ø</div>
+          <div>
+            <div class="local-item-title">Instagram</div>
+            <div class="local-item-val">@espacocasulli<br>@soulizandrasoares</div>
+          </div>
+        </div>
+        <div class="local-item">
+          <div class="local-item-icon">=P</div>
+          <div>
+            <div class="local-item-title">Horário de Atendimento</div>
+            <div class="local-item-val">Segunda a Sexta: 8h às 19h<br>Sábado: 8h às 13h</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="planos-saude">
+        <div class="planos-saude-title">Planos de Saúde Aceitos</div>
+        <div class="planos-saude-list">
+          <span class="plano-saude-badge">SulAmérica</span>
+          <span class="plano-saude-badge">PASA</span>
+          <span class="plano-saude-badge">Particular</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="local-map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.369!2d-37.0730823!3d-10.9472468!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x71ab32afe4b7501b%3A0x277f9881359102a5!2sAv.%20Dr.%20Jos%C3%A9%20Machado%20de%20Souza%2C%20120%20-%20Jardins%2C%20Aracaju%20-%20SE%2C%2049025-740!5e0!3m2!1spt-BR!2sbr!4v1709048000000!5m2!1spt-BR!2sbr"
+        width="100%" height="100%" style="border:0; position: absolute; top: 0; left: 0;" allowfullscreen=""
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+      <div class="local-map-pin">
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo-text">CASULLI</div>
+        <div class="footer-logo-sub">Clínica Integrada de Alta Performance</div>
+        <p class="footer-brand-desc">
+          Um espaço onde ciência, acolhimento e transformação humana se encontram. Aqui você encontra cuidado, clareza e
+          o seu recomeço.
+        </p>
+        <div class="footer-social">
+          <a href="https://instagram.com/espacocasulli" class="social-link" title="Instagram Casulli">=ø</a>
+          <a href="https://instagram.com/soulizandrasoares" class="social-link" title="Instagram Lizandra">=d</a>
+          <a href="https://wa.me/5579999999999" class="social-link" title="WhatsApp">=¬</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Serviços</div>
+        <ul class="footer-links">
+          <li><a href="#servicos">Neuropsicologia</a></li>
+          <li><a href="#servicos">Psicoterapia</a></li>
+          <li><a href="#servicos">Nutrição Integrada</a></li>
+          <li><a href="#servicos">Alta Performance</a></li>
+          <li><a href="#servicos">Grupos Terapêuticos</a></li>
+          <li><a href="#servicos">Atendimento Online</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Programas</div>
+        <ul class="footer-links">
+          <li><a href="#fenix">Programa Fênix</a></li>
+          <li><a href="#fenix">Desafio Fênix 5 Dias</a></li>
+          <li><a href="#fenix">Workshop Fênix</a></li>
+          <li><a href="#treinamentos">Treinamentos</a></li>
+          <li><a href="#digital">Plataforma EAD</a></li>
+          <li><a href="#digital">Comunidade Casulli</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Contato</div>
+        <ul class="footer-links">
+          <li><a href="#localizacao">Endereço</a></li>
+          <li><a href="https://wa.me/5579999999999">WhatsApp</a></li>
+          <li><a href="https://instagram.com/espacocasulli">@espacocasulli</a></li>
+          <li><a href="#profissionais">Nossos Profissionais</a></li>
+          <li><a href="#sobre">Sobre a clínica</a></li>
+          <li><a href="#equipe">Nossa equipe</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Casulli Espaço Terapêutico. Todos os direitos reservados.</span>
+      <span class="footer-crp">CRP 19/003267 · Lizandra Menezes Soares · Aracaju, Sergipe</span>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLUTUANTE -->
+  <a href="https://wa.me/5579999999999" class="whatsapp-float" title="Fale conosco pelo WhatsApp">=¬</a>
+
+  <script>
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(r => observer.observe(r));
+
+    // Nav shrink on scroll
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('nav');
+      if (window.scrollY > 60) {
+        nav.style.height = '64px';
+        nav.style.background = 'rgba(13, 31, 53, 0.99)';
+      } else {
+        nav.style.height = '80px';
+        nav.style.background = 'rgba(13, 31, 53, 0.97)';
+      }
+    });
+
+    // Smooth active nav links
+    const sections = document.querySelectorAll('section[id], div[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 100) current = s.id;
+      });
+      navLinks.forEach(a => {
+        a.style.color = a.getAttribute('href') === '#' + current
+          ? 'var(--gold)'
+          : 'rgba(255,255,255,0.75)';
+      });
+    });
+
+    // Carousel functionality
+    const carousel = document.querySelector('.profissionais-carousel');
+    const prevBtn = document.querySelector('.carousel-arrow-prev');
+    const nextBtn = document.querySelector('.carousel-arrow-next');
+    const cards = Array.from(document.querySelectorAll('.profissional-card'));
+
+    let currentIndex = 0;
+    let cardsPerView = 3;
+    let isTransitioning = false;
+
+    // Update cards per view based on screen size
+    function updateCardsPerView() {
+      const oldCardsPerView = cardsPerView;
+      if (window.innerWidth <= 640) {
+        cardsPerView = 1;
+      } else if (window.innerWidth <= 1024) {
+        cardsPerView = 2;
+      } else {
+        cardsPerView = 3;
+      }
+
+      // Reset to first page if cards per view changed
+      if (oldCardsPerView !== cardsPerView) {
+        currentIndex = 0;
+      }
+      updateCarousel();
+    }
+
+    function updateCarousel(animate = false) {
+      const maxIndex = Math.max(0, cards.length - cardsPerView);
+      currentIndex = Math.min(Math.max(0, currentIndex), maxIndex);
+
+      // Update all cards visibility
+      cards.forEach((card, index) => {
+        const isVisible = index >= currentIndex && index < currentIndex + cardsPerView;
+
+        if (isVisible) {
+          card.style.display = 'block';
+          if (animate) {
+            card.style.opacity = '0';
+            card.style.transform = 'scale(0.95)';
+
+            // Stagger animation for visible cards
+            setTimeout(() => {
+              card.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+              card.style.opacity = '1';
+              card.style.transform = 'scale(1)';
+            }, (index - currentIndex) * 80);
+          } else {
+            card.style.opacity = '1';
+            card.style.transform = 'scale(1)';
+          }
+        } else {
+          card.style.display = 'none';
+          card.style.opacity = '0';
+        }
+      });
+
+      // Update button states
+      const isAtStart = currentIndex === 0;
+      const isAtEnd = currentIndex >= maxIndex;
+
+      prevBtn.disabled = isAtStart;
+      nextBtn.disabled = isAtEnd;
+
+      prevBtn.style.opacity = isAtStart ? '0.4' : '1';
+      nextBtn.style.opacity = isAtEnd ? '0.4' : '1';
+
+      prevBtn.style.cursor = isAtStart ? 'not-allowed' : 'pointer';
+      nextBtn.style.cursor = isAtEnd ? 'not-allowed' : 'pointer';
+
+      prevBtn.style.pointerEvents = isAtStart ? 'none' : 'auto';
+      nextBtn.style.pointerEvents = isAtEnd ? 'none' : 'auto';
+    }
+
+    prevBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      if (!isTransitioning && currentIndex > 0) {
+        isTransitioning = true;
+        currentIndex--;
+        updateCarousel(true);
+        setTimeout(() => { isTransitioning = false; }, 500);
+      }
+    });
+
+    nextBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const maxIndex = Math.max(0, cards.length - cardsPerView);
+      if (!isTransitioning && currentIndex < maxIndex) {
+        isTransitioning = true;
+        currentIndex++;
+        updateCarousel(true);
+        setTimeout(() => { isTransitioning = false; }, 500);
+      }
+    });
+
+    // Handle window resize with debounce
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(updateCardsPerView, 200);
+    });
+
+    // Initialize carousel
+    updateCardsPerView();
+  </script>
+</body>
+
+</html>

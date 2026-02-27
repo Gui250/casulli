@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(file -I /Users/guilhermemoreno/Desktop/casulli/casulli_site.html)",
+      "Bash(iconv -f UTF-8 -t UTF-8 /Users/guilhermemoreno/Desktop/casulli/casulli_site.html)",
+      "Bash(cat -A)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
