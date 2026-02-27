@@ -1,5 +1,5 @@
 ### O que você deve fazer? 
-  - Tire a sessão 'Nossos Diferenciais'.
+  - Troque a logo do site para o logo que está na pasta 'casulli/logo/LOGO - SITE CASULLI.png'
 
 
 ### O que você é? 
