@@ -9,6 +9,11 @@
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
   <style>
+    .servico-card:hover .servico-icon img {
+      filter: invert(72%) sepia(35%) saturate(760%) hue-rotate(5deg) brightness(88%) contrast(92%);
+      transition: filter 0.3s ease;
+    }
+
     :root {
       --navy: #0D1F35;
       --navy-mid: #1A3A5C;
@@ -1227,128 +1232,7 @@
       font-style: italic;
     }
 
-    /* ===== DIFERENCIAIS ===== */
-    #diferenciais {
-      background: var(--cream);
-    }
 
-    .diferenciais-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-      margin-top: 56px;
-    }
-
-    .diferencial-item {
-      text-align: center;
-      padding: 40px 24px;
-      transition: all 0.3s;
-    }
-
-    .diferencial-item:hover {
-      transform: translateY(-6px);
-    }
-
-    .diferencial-icon {
-      width: 72px;
-      height: 72px;
-      background: var(--gold-pale);
-      border: 1px solid var(--border);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 28px;
-      margin: 0 auto 24px;
-      transition: all 0.3s;
-    }
-
-    .diferencial-item:hover .diferencial-icon {
-      background: var(--navy);
-      border-color: var(--navy);
-    }
-
-    .diferencial-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 22px;
-      font-weight: 600;
-      color: var(--navy);
-      margin-bottom: 10px;
-    }
-
-    .diferencial-desc {
-      font-size: 14px;
-      font-weight: 300;
-      color: var(--text-mid);
-      line-height: 1.7;
-    }
-
-    /* ===== EQUIPE ===== */
-    #equipe {
-      background: var(--white);
-    }
-
-    .equipe-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-      margin-top: 56px;
-    }
-
-    .equipe-card {
-      text-align: center;
-      border: 1px solid rgba(13, 31, 53, 0.08);
-      border-radius: 4px;
-      padding: 36px 24px;
-      transition: all 0.4s;
-    }
-
-    .equipe-card:hover {
-      border-color: var(--gold);
-      box-shadow: var(--shadow-gold);
-      transform: translateY(-4px);
-    }
-
-    .equipe-avatar {
-      width: 80px;
-      height: 80px;
-      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 32px;
-      margin: 0 auto 20px;
-      border: 2px solid transparent;
-      transition: border-color 0.4s;
-    }
-
-    .equipe-card:hover .equipe-avatar {
-      border-color: var(--gold);
-    }
-
-    .equipe-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 20px;
-      font-weight: 600;
-      color: var(--navy);
-      margin-bottom: 4px;
-    }
-
-    .equipe-role {
-      font-size: 12px;
-      font-weight: 400;
-      color: var(--gold);
-      letter-spacing: 0.5px;
-      margin-bottom: 10px;
-    }
-
-    .equipe-desc {
-      font-size: 12px;
-      font-weight: 300;
-      color: var(--text-light);
-      line-height: 1.6;
-    }
 
     /* ===== DEPOIMENTOS ===== */
     #depoimentos {
@@ -1981,17 +1865,11 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .diferenciais-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
 
       .treina-grid {
         grid-template-columns: 1fr;
       }
 
-      .equipe-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
 
       .depo-grid {
         grid-template-columns: 1fr;
@@ -2052,13 +1930,7 @@
         grid-template-columns: 1fr;
       }
 
-      .diferenciais-grid {
-        grid-template-columns: 1fr;
-      }
 
-      .equipe-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
 
       .hero-stats {
         gap: 24px;
@@ -2112,7 +1984,6 @@
       <li><a href="#profissionais">Profissionais</a></li>
       <li><a href="#fenix">Método Fênix</a></li>
       <li><a href="#treinamentos">Treinamentos</a></li>
-      <li><a href="#equipe">Equipe</a></li>
       <li><a href="#localizacao">Contato</a></li>
       <li><a href="https://wa.me/5579999999999" class="nav-cta">Agendar</a></li>
     </ul>
@@ -2201,65 +2072,66 @@
       <div class="servico-card">
         <span class="servico-num">01</span>
         <span class="servico-icon">
-          <img src="./casulli/icones/NEUROPSICOLOGIA_ICONE.png" </span>
-          <div class="servico-title">Neuropsicologia</div>
-          <div class="servico-desc">Avaliação e reabilitação neuropsicológica completa, com protocolos baseados em
-            evidências para crianças, adolescentes e adultos.</div>
-          <div class="servico-tags">
-            <span class="servico-tag">Avaliação</span>
-            <span class="servico-tag">Reabilitação</span>
-            <span class="servico-tag">TDAH</span>
-            <span class="servico-tag">TEA</span>
-          </div>
+          <img src="/casulli/icones/NEUROPSICOLOGIA_ICONE.svg" />
+        </span>
+        <div class="servico-title">Neuropsicologia</div>
+        <div class="servico-desc">Avaliação e reabilitação neuropsicológica completa, com protocolos baseados em
+          evidências para crianças, adolescentes e adultos.</div>
+        <div class="servico-tags">
+          <span class="servico-tag">Avaliação</span>
+          <span class="servico-tag">Reabilitação</span>
+          <span class="servico-tag">TDAH</span>
+          <span class="servico-tag">TEA</span>
+        </div>
       </div>
 
       <div class="servico-card">
         <span class="servico-num">02</span>
         <span class="servico-icon">
-          <img src="./casulli/icones/PSICOLOGIA_ICONE.png" </span>
-          <div class="servico-title">Psicoterapia</div>
-          <div class="servico-desc">Psicoterapia individual com abordagem TCC e outras técnicas, voltada para ansiedade,
-            depressão, traumas e desenvolvimento pessoal.</div>
-          <div class="servico-tags">
-            <span class="servico-tag">TCC</span>
-            <span class="servico-tag">Ansiedade</span>
-            <span class="servico-tag">Depressão</span>
-            <span class="servico-tag">Trauma</span>
-          </div>
+          <img src="./casulli/icones/PSICOLOGIA_ICONE.svg" /> </span>
+        <div class="servico-title">Psicoterapia</div>
+        <div class="servico-desc">Psicoterapia individual com abordagem TCC e outras técnicas, voltada para ansiedade,
+          depressão, traumas e desenvolvimento pessoal.</div>
+        <div class="servico-tags">
+          <span class="servico-tag">TCC</span>
+          <span class="servico-tag">Ansiedade</span>
+          <span class="servico-tag">Depressão</span>
+          <span class="servico-tag">Trauma</span>
+        </div>
       </div>
 
       <div class="servico-card">
         <span class="servico-num">03</span>
         <span class="servico-icon">
-          <img src="./casulli/icones/NUTRIÇÃO_ICONE.png" </span>
-          <div class="servico-title">Nutrição Integrada</div>
-          <div class="servico-desc">Acompanhamento nutricional alinhado à saúde mental e cognitiva, potencializando os
-            resultados terapêuticos com alimentação funcional.</div>
-          <div class="servico-tags">
-            <span class="servico-tag">Alimentação</span>
-            <span class="servico-tag">Comportamental</span>
-            <span class="servico-tag">Cognitiva</span>
-          </div>
+          <img src="./casulli/icones/NUTRIÇÃO_ICONE.svg" /> </span>
+        <div class="servico-title">Nutrição Integrada</div>
+        <div class="servico-desc">Acompanhamento nutricional alinhado à saúde mental e cognitiva, potencializando os
+          resultados terapêuticos com alimentação funcional.</div>
+        <div class="servico-tags">
+          <span class="servico-tag">Alimentação</span>
+          <span class="servico-tag">Comportamental</span>
+          <span class="servico-tag">Cognitiva</span>
+        </div>
       </div>
 
       <div class="servico-card">
         <span class="servico-num">04</span>
         <span class="servico-icon">
-          <img src="./casulli/icones/FISIOTERAPIA_ICONE.png" </span>
-          <div class="servico-title">Fisioterapia</div>
-          <div class="servico-desc">Fisioterapia com abordagem neurofuncional e psicossomática, voltada para dores
-            crônicas, tensões por estresse, reabilitação física e performance corporal.</div>
-          <div class="servico-tags">
-            <span class="servico-tag">Pilates</span>
-            <span class="servico-tag">Fisioterapia Ortopédica</span>
-            <span class="servico-tag">Fisioterapia Psicossomática</span>
-          </div>
+          <img src="./casulli/icones/FISIOTERAPIA_ICONE.svg" /> </span>
+        <div class="servico-title">Fisioterapia</div>
+        <div class="servico-desc">Fisioterapia com abordagem neurofuncional e psicossomática, voltada para dores
+          crônicas, tensões por estresse, reabilitação física e performance corporal.</div>
+        <div class="servico-tags">
+          <span class="servico-tag">Pilates</span>
+          <span class="servico-tag">Fisioterapia Ortopédica</span>
+          <span class="servico-tag">Fisioterapia Psicossomática</span>
+        </div>
       </div>
 
       <div class="servico-card">
         <span class="servico-num">05</span>
         <span class="servico-icon">
-          <img src="./casulli/icones/ONLINE_ICONE.png" />
+          <img src="./casulli/icones/ONLINE_ICONE.svg" />
         </span>
         <div class="servico-title">Avaliação</div>
         <div class="servico-desc">
@@ -2276,7 +2148,7 @@
       <div class="servico-card">
         <span class="servico-num">06</span>
         <span class="servico-icon">
-          <img src="/casulli/icones/ONLINE_ICONE.png" />
+          <img src="/casulli/icones/ONLINE_ICONE.svg" />
         </span>
         <div class="servico-title">Atendimento Online</div>
         <div class="servico-desc">
@@ -2518,7 +2390,6 @@
 
       <div class="fenix-visual reveal reveal-delay-2">
         <div class="fenix-card">
-          <span class="fenix-symbol">></span>
           <p class="fenix-quote">
             "Você não está quebrado. Você está tentando voar com <em>asas que ainda não descobriu</em>."
           </p>
@@ -2688,52 +2559,7 @@
     </div>
   </section>
 
-  <!-- DIFERENCIAIS -->
-  <section id="diferenciais">
-    <div style="text-align:center;">
-      <div class="section-eyebrow reveal" style="justify-content:center;">Por que o Casulli</div>
-      <h2 class="section-title reveal reveal-delay-1">Nossos <em>diferenciais</em></h2>
-    </div>
 
-    <div class="diferenciais-grid">
-      <div class="diferencial-item reveal">
-        <div class="diferencial-icon">=,</div>
-        <div class="diferencial-title">Evidência Científica</div>
-        <div class="diferencial-desc">Todos os protocolos são baseados em pesquisas científicas atualizadas. Nada de
-          achismo  apenas ciência com resultados comprováveis.</div>
-      </div>
-      <div class="diferencial-item reveal reveal-delay-1">
-        <div class="diferencial-icon">&lt;¯</div>
-        <div class="diferencial-title">Abordagem Integrada</div>
-        <div class="diferencial-desc">Mente, emoção e corpo trabalhados juntos. Neuropsicologia, psicoterapia e
-          nutrição em sinergia para transformações reais e duradouras.</div>
-      </div>
-      <div class="diferencial-item reveal reveal-delay-2">
-        <div class="diferencial-icon">=Ê</div>
-        <div class="diferencial-title">Resultados Mensuráveis</div>
-        <div class="diferencial-desc">Relatórios evolutivos, avaliações periódicas e metas clínicas claras. Você
-          acompanha seu progresso em cada etapa do processo.</div>
-      </div>
-      <div class="diferencial-item reveal reveal-delay-1">
-        <div class="diferencial-icon">&lt;Æ</div>
-        <div class="diferencial-title">Autoridade Reconhecida</div>
-        <div class="diferencial-desc">7+ anos de experiência, mestrado, 4 prêmios de excelência e presença em
-          eventos nacionais. Referência consolidada em Sergipe.</div>
-      </div>
-      <div class="diferencial-item reveal reveal-delay-2">
-        <div class="diferencial-icon">&lt; </div>
-        <div class="diferencial-title">Presença Híbrida</div>
-        <div class="diferencial-desc">Atendimento presencial em Aracaju e online para todo o Brasil.
-          Flexibilidade sem abrir mão da qualidade e da proximidade.</div>
-      </div>
-      <div class="diferencial-item reveal reveal-delay-3">
-        <div class="diferencial-icon">d </div>
-        <div class="diferencial-title">Acolhimento Genuíno</div>
-        <div class="diferencial-desc">Um ambiente seguro, ético e sem julgamentos. Aqui você encontra cuidado,
-          clareza e o espaço para o seu recomeço.</div>
-      </div>
-    </div>
-  </section>
 
   <!-- SOBRE -->
   <section id="sobre">
@@ -2802,45 +2628,6 @@
     </div>
   </section>
 
-  <!-- EQUIPE -->
-  <section id="equipe">
-    <div class="section-eyebrow reveal">Nossos Especialistas</div>
-    <h2 class="section-title reveal reveal-delay-1">A <em>equipe</em> que cuida de você</h2>
-    <p class="section-desc reveal reveal-delay-2">
-      Profissionais selecionados com rigor técnico e alinhamento de valores, comprometidos com a sua transformação.
-    </p>
-
-    <div class="equipe-grid">
-      <div class="equipe-card reveal">
-        <div class="equipe-avatar">>à</div>
-        <div class="equipe-name">Lizandra Soares</div>
-        <div class="equipe-role">Neuropsicóloga | Fundadora</div>
-        <div class="equipe-desc">CRP 19/003267 · Mestre em Psicologia (UFS) · Especialista em Neuropsicologia e TCC
-        </div>
-      </div>
-      <div class="equipe-card reveal reveal-delay-1">
-        <div class="equipe-avatar">=¬</div>
-        <div class="equipe-name">Equipe de Psicologia</div>
-        <div class="equipe-role">Psicólogas Clínicas</div>
-        <div class="equipe-desc">Estagiárias supervisionadas e psicólogas em formação contínua com foco em TCC e
-          avaliação psicológica</div>
-      </div>
-      <div class="equipe-card reveal reveal-delay-2">
-        <div class="equipe-avatar">>W</div>
-        <div class="equipe-name">Nutrição Clínica</div>
-        <div class="equipe-role">Nutricionista</div>
-        <div class="equipe-desc">Especialista em nutrição comportamental e funcional integrada à saúde mental e
-          cognitiva</div>
-      </div>
-      <div class="equipe-card reveal reveal-delay-3">
-        <div class="equipe-avatar">=Ë</div>
-        <div class="equipe-name">Gestão Clínica</div>
-        <div class="equipe-role">Coordenadora da Clínica</div>
-        <div class="equipe-desc">Garante a excelência operacional e a experiência completa do paciente desde o primeiro
-          contato</div>
-      </div>
-    </div>
-  </section>
 
   <!-- DEPOIMENTOS -->
   <section id="depoimentos">
@@ -3016,7 +2803,6 @@
           <li><a href="https://instagram.com/espacocasulli">@espacocasulli</a></li>
           <li><a href="#profissionais">Nossos Profissionais</a></li>
           <li><a href="#sobre">Sobre a clínica</a></li>
-          <li><a href="#equipe">Nossa equipe</a></li>
         </ul>
       </div>
     </div>

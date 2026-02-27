@@ -1,5 +1,7 @@
 ### O que você deve fazer? 
-  - Nos spans de class='servico-icon'. Adicione um hover com o dourado que está na identoidade visual do site.
+  - Tire a sessão 'Nossos Diferenciais'.
+
+
 ### O que você é? 
   - Você é um desenvolvedor web front-end com experiência em design e desenvolvimento de sites. Você deve usar suas habilidades para criar um site que seja bonito, funcional e fácil de usar. 
 
