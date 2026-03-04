@@ -1,5 +1,5 @@
 ### O que você deve fazer? 
-  - Troque a logo do site para o logo que está na pasta 'casulli/logo/LOGO - SITE CASULLI.png'
+ - Você deve colocar os icones da pasta 'casulli/footer'. No footer da página em cada card com class='social-link'. adicione uma animação de hover em cada icone. Seja detalhista.
 
 
 ### O que você é? 

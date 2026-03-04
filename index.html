@@ -1339,11 +1339,6 @@
       box-shadow: var(--shadow-gold);
     }
 
-    .premio-item::before {
-      content: '<Æ';
-      font-size: 14px;
-    }
-
     /* ===== LOCALIZACAO ===== */
     #localizacao {
       background: var(--white);
@@ -1601,22 +1596,56 @@
     }
 
     .social-link {
-      width: 36px;
-      height: 36px;
+      width: 44px;
+      height: 44px;
       background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 2px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 6px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 16px;
       text-decoration: none;
-      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+    }
+
+    .social-link::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      transform: translateY(100%);
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 0;
+    }
+
+    .social-link:hover::before {
+      transform: translateY(0);
     }
 
     .social-link:hover {
-      background: var(--gold);
+      transform: translateY(-4px) scale(1.08);
       border-color: var(--gold);
+      box-shadow: 0 12px 32px rgba(201, 168, 76, 0.45),
+        0 4px 12px rgba(201, 168, 76, 0.25);
+    }
+
+    .social-link img {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+      position: relative;
+      z-index: 1;
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+        filter 0.3s ease;
+    }
+
+    .social-link:hover img {
+      transform: scale(1.2) rotate(-8deg);
+      filter: brightness(0);
     }
 
     .footer-col-title {
@@ -1932,7 +1961,7 @@
       <li><a href="#sobre">Sobre</a></li>
       <li><a href="#servicos">Serviços</a></li>
       <li><a href="#profissionais">Profissionais</a></li>
-      <li><a href="#fenix">Método Fênix</a></li>
+      <li style="display:none"><a href="#fenix">Método Fênix</a></li>
       <li><a href="#treinamentos">Treinamentos</a></li>
       <li><a href="#localizacao">Contato</a></li>
       <li><a href="https://wa.me/5579999999999" class="nav-cta">Agendar</a></li>
@@ -1994,14 +2023,14 @@
 
   <!-- PRÊMIOS -->
   <div id="premios">
-    <p class="premios-title">Reconhecimentos & Premiações</p>
+    <p class="premios-title">A Casulli</p>
     <div class="premios-list">
-      <div class="premio-item">Melhores do Ano  Aracaju</div>
-      <div class="premio-item">Quem Fez e Faz História</div>
-      <div class="premio-item">Troféu Imprensa</div>
-      <div class="premio-item">Gente Gentíssima</div>
-      <div class="premio-item">DigiTalks Summit Brasil</div>
-      <div class="premio-item">Casulli no Horizonte Jardins</div>
+      <div class="premio-item">Centro de saúde integrada</div>
+      <div class="premio-item">Unimos Rigor e Ciência</div>
+      <div class="premio-item">Investigamos a sua causa</div>
+      <div class="premio-item">Vamos além da terapia</div>
+      <div class="premio-item">A sua história importa</div>
+      <div class="premio-item">Atendimento Humanizado</div>
     </div>
   </div>
 
@@ -2135,7 +2164,7 @@
       <div class="profissionais-carousel">
         <div class="profissional-card">
           <div class="profissional-image">
-            <img src="casulli/BRENO VICENTE.png" alt="Breno Vicente">
+            <img src="casulli/BRENO VICENTE - NUTRICIONISTA.png" alt="Breno Vicente">
           </div>
           <div class="profissional-info">
             <h3 class="profissional-nome">Breno Vicente</h3>
@@ -2147,7 +2176,7 @@
 
         <div class="profissional-card">
           <div class="profissional-image">
-            <img src="casulli/CAROLINA BEZERRA.png" alt="Carolina Bezerra">
+            <img src="casulli/CAROLINA BEZERRA - PSICOLOGA.png" alt="Carolina Bezerra">
           </div>
           <div class="profissional-info">
             <h3 class="profissional-nome">Carolina Bezerra</h3>
@@ -2182,7 +2211,7 @@
 
         <div class="profissional-card">
           <div class="profissional-image">
-            <img src="casulli/KAROLINA VASCONCELOS.png" alt="Karolina Vasconcelos">
+            <img src="casulli/KAROLINA VASCONCELOS - PSICOLOGA.png" alt="Karolina Vasconcelos">
           </div>
           <div class="profissional-info">
             <h3 class="profissional-nome">Karolina Vasconcelos</h3>
@@ -2228,7 +2257,7 @@
 
         <div class="profissional-card">
           <div class="profissional-image">
-            <img src="casulli/RITA BATISTA.png" alt="Rita Batista">
+            <img src="casulli/RITA BATISTA - PSICOLOGA.png" alt="Rita Batista">
           </div>
           <div class="profissional-info">
             <h3 class="profissional-nome">Rita Batista</h3>
@@ -2262,7 +2291,7 @@
 
         <div class="profissional-card">
           <div class="profissional-image">
-            <img src="casulli/VITORIA REGINA.png" alt="Vitória Regina">
+            <img src="casulli/VITORIA REGINA - PSICOLOGA.png" alt="Vitória Regina">
           </div>
           <div class="profissional-info">
             <h3 class="profissional-nome">Vitória Regina</h3>
@@ -2288,7 +2317,7 @@
   </section>
 
   <!-- MÉTODO FÊNIX -->
-  <section id="fenix">
+  <section id="fenix" style="display:none">
     <div class="fenix-layout">
       <div>
         <div class="section-eyebrow reveal">Metodologia Exclusiva</div>
@@ -2471,40 +2500,40 @@
     <div class="digital-layout">
       <div class="digital-cards reveal">
         <div class="digital-card">
-          <span class="digital-card-icon">=Ú</span>
+          <span class="digital-card-icon"></span>
           <div class="digital-card-title">Curso de Produtividade</div>
           <div class="digital-card-desc">4 a 6 módulos gravados com técnicas de neurociência para produtividade real
           </div>
-          <div class="digital-card-price">A partir de R$ 297</div>
+          <div class="digital-card-price">Em Construção</div>
         </div>
         <div class="digital-card">
-          <span class="digital-card-icon">=Ö</span>
+          <span class="digital-card-icon"></span>
           <div class="digital-card-title">E-book Performance Cognitiva</div>
           <div class="digital-card-desc">Guia completo em PDF + áudio para desenvolver sua melhor versão</div>
-          <div class="digital-card-price">A partir de R$ 47</div>
+          <div class="digital-card-price">Em Construção</div>
         </div>
         <div class="digital-card">
-          <span class="digital-card-icon">=e</span>
+          <span class="digital-card-icon"></span>
           <div class="digital-card-title">Grupo Terapêutico Online</div>
           <div class="digital-card-desc">Encontros mensais em grupo para saúde mental e performance</div>
-          <div class="digital-card-price">A partir de R$ 197/mês</div>
+          <div class="digital-card-price">Em construção</div>
         </div>
         <div class="digital-card">
-          <span class="digital-card-icon">P</span>
+          <span class="digital-card-icon"></span>
           <div class="digital-card-title">Comunidade Casulli</div>
           <div class="digital-card-desc">Conteúdo exclusivo, grupo VIP e lives mensais com Lizandra</div>
-          <div class="digital-card-price">A partir de R$ 97/mês</div>
+          <div class="digital-card-price">Em construção</div>
         </div>
       </div>
 
       <div class="reveal reveal-delay-2">
-        <div class="section-eyebrow">Plataforma Digital</div>
-        <h2 class="section-title light">Aprenda <em>onde estiver</em><br>e quando quiser</h2>
+        <div class="section-eyebrow">Casulli One</div>
+        <h2 class="section-title light">Aprenda <em>onde quiser</em><br>e quando quiser</h2>
         <p class="section-desc light" style="margin-bottom:36px;">
-          Nossa plataforma EAD traz o conteúdo do Casulli para qualquer lugar do Brasil. Cursos, e-books, grupos e
-          comunidade à disposição 24 horas por dia.
+          Nossa plataforma digital entrega a experiência completa do Casulli: cursos práticos, materiais de apoio e uma
+          comunidade ativa para acelerar seus resultados. O conhecimento que você precisa, disponível no seu tempo.
         </p>
-        <a href="https://wa.me/5579999999999" class="btn-primary">Acessar Produtos Digitais</a>
+        <a href="https://wa.me/5579999999999" class="btn-primary">Disponível em Breve</a>
       </div>
     </div>
   </section>
@@ -2655,7 +2684,7 @@
       <div class="local-contact-items">
         <div class="local-item">
           <div class="local-item-icon">
-            <img src="./casulli/redes/LOCALIZAÇÃO_ICONE.svg" />
+            <img src="./casulli/redes/LOCALIZAÇÃO_ICONE.svg" alt="Localização" />
           </div>
           <div>
             <div class="local-item-title">Endereço</div>
@@ -2723,9 +2752,12 @@
           o seu recomeço.
         </p>
         <div class="footer-social">
-          <a href="https://instagram.com/espacocasulli" class="social-link" title="Instagram Casulli">=ø</a>
-          <a href="https://instagram.com/soulizandrasoares" class="social-link" title="Instagram Lizandra">=d</a>
-          <a href="https://wa.me/5579999999999" class="social-link" title="WhatsApp">=¬</a>
+          <a href="https://instagram.com/espacocasulli" class="social-link" title="Instagram Casulli">
+            <img src="casulli/footer/INSTAGRAM.svg" alt="Instagram" width="20" height="20">
+          </a>
+          <a href="https://wa.me/5579999999999" class="social-link" title="WhatsApp">
+            <img src="casulli/footer/WHAYSAPP.svg" alt="WhatsApp" width="20" height="20">
+          </a>
         </div>
       </div>
 
@@ -2772,7 +2804,8 @@
   </footer>
 
   <!-- WHATSAPP FLUTUANTE -->
-  <a href="https://wa.me/5579999999999" class="whatsapp-float" title="Fale conosco pelo WhatsApp">=¬</a>
+  <a href="https://wa.me/5579999999999" class="whatsapp-float" title="Fale conosco pelo WhatsApp">
+    <img src="./casulli/footer/WHAYSAPP.svg" /> </a>
 
   <script>
     // Scroll reveal
