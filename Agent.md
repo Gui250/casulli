@@ -1,5 +1,5 @@
 ### O que você deve fazer? 
- - Você deve colocar os icones da pasta 'casulli/footer'. No footer da página em cada card com class='social-link'. adicione uma animação de hover em cada icone. Seja detalhista.
+ - Deixe o botão Escrito 'Disponível em breve' com class='btn-primary'. Como uma opção visivel, mas não clicavel.
 
 
 ### O que você é? 
